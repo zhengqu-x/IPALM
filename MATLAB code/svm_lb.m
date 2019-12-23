@@ -1,0 +1,16 @@
+[b A]= libsvmread('matrix_a7a');
+m= size(A,1);
+e= ones(m,1);
+A= [A e];
+n= size(A,2);
+B= sparse(1:m,1:m,b);
+A= B*A;
+M_T_Lambda= A'*lambda';
+E= zeros(n,1);
+E(n,:)= M_T_Lambda(n,:);
+eps= A'\E;
+M_T_Lambda= M_T_Lambda- E;
+tmp1= max(M_T_Lambda);
+tmp2= min(M_T_Lambda);
+tmp= max(tmp1,-tmp2);
+lb= -sum(lambda'/tmp- eps);
