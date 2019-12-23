@@ -28,7 +28,7 @@ d. ASGARD_DL
 
 The matrices should be entered either in LIBSVM format. 
 
-We include in the folder datas/ 16 datasets news20scale2, rcv1, rcv2, rcv1mc, news20binary, news20binary_bp, ijcnn1, w4a, w6a, w7a, w8a, a7a, a8a, a9a, real-sim, covtype, downloaded or modified from https://www.csie.ntu.edu.tw/~cjlin/libsvm/, that are used in our experiments.
+We include in the folder datas/ 16 datasets news20scale2, rcv1, rcv2, rcv1mc, news20binary, news20binary_bp, ijcnn1, w4a, w6a, w7a, w8a, a7a, a8a, a9a, real-sim, covtype, downloaded or modified from https://www.csie.ntu.edu.tw/~cjlin/libsvm/, that are used in our experiments. Since real-sim is too large to upload, readers need to download it by themselves and save it as matrix_realsim. Datasets news20binary, news20binary_bp and covtype are zip files. So readers need unzip them before running the following commands.
 
 
 
