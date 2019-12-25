@@ -3,7 +3,7 @@ Instruction for CVX
 This folder contains the code and data used to solving the optimization problem by CVX. So readers need download and install CVX package (http://cvxr.com/cvx/).
 
 We include in the folder 3 datasets news20scale2, rcv1, rcv1mc. 
-Since news20binary and news20bianry_bp are too large to upload. Readers need download and install LIBSVM package (https://www.csie.ntu.edu.tw/~cjlin/libsvm/#download). Then run import_data.m.
+Since news20binary and news20bianry_bp are too large to upload. Readers need download and install LIBSVM package (https://www.csie.ntu.edu.tw/~cjlin/libsvm/#download). Unzip matrix_news20binary.zip and matrix_news20binary_bp.zip, then run import_data.m.
 
 
 
