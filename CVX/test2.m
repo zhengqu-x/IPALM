@@ -1,4 +1,4 @@
-A = importdata('news20binary_A.mat'); b = importdata('news20binary_bp_b.mat'); 
+A = importdata('rcv1_A.mat'); b = importdata('rcv1_b.mat'); 
 %M= importdata('Fused_leu.mat');
 n= size(A,2);
 cvx_begin
