@@ -55,11 +55,11 @@ arg10: (optional): p_N_2 (print or compute every p_N_2 iterations), default valu
 
 For example, to solve the least absolute deviation problem with lambda1=0.01, lambda3= 1 in the paper, using IPALM_APPROX, beta_0= 1, epsilon_0= 100, p_N_2= 100, do: 
 
->>main 2 a news20scale2 0.01 1 100000 100 1 100 100 
+>>./main 2 a news20scale2 0.01 1 100000 100 1 100 100 
 
 If instead you want to solve the problem with SMART_CD, and beta_0= 1000, p_N_2= 50, do:
 
->>main 2 c news20scale2 0.01 1 100000 100 1000 50  
+>>./main 2 c news20scale2 0.01 1 100000 100 1000 50  
 
 
 
@@ -345,7 +345,7 @@ To reproduce Figure 5(d) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./ 4 a a9a 1 1 100000 1200 1 1000 100 
+>> ./main 4 a a9a 1 1 100000 1200 1 1000 100 
 >> ./main 4 b a9a 1 1 100000 1200 1 100 20 
 >> ./main 4 c a9a 1 1 100000 1200 100 100 
 >> ./main 4 d a9a 1 1 100000 1200 10
