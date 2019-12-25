@@ -39,7 +39,7 @@ To compile, please do:
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
 
-
+To run, please type:
 >> main arg1 arg2 arg3 arg4 arg5 arg6 arg7 arg8 arg9 arg10
 
 arg1: problem_type;
