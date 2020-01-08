@@ -16,7 +16,7 @@ hold on
 plot(SMART_CD_svm_w4am(1:20:s3,2),log10((abs(SMART_CD_svm_w4am(1:20:s3,5)- f_opt)/f_opt)),'--x','LineWidth',2);
 %plot(DLRCSGR_m_svm_w4am(1:2:52,2),log10((abs(DLRCSGR_m_svm_w4am(1:2:52,3)- f_opt)/f_opt)),'--o','LineWidth',2);
 %hold on
-plot(KATYUSHA_svm_w4am(1:20:s4,2),log10((abs(KATYUSHA_svm_w4am(1:20:s4,5)- f_lb)/f_lb)),'--o','LineWidth',2);
+plot(KATYUSHA_svm_w4am(1:20:s4,2),log10((abs(KATYUSHA_svm_w4am(1:20:s4,3)- f_lb)/f_lb)),'--o','LineWidth',2);
 %plot(ADMM_svm_w4am(:,2),ADMM_svm_w4am(:,6),'LineWidth',5);
 %hold on
 %plot(CVX_svm_w4am(:,3),log10((abs(CVX_svm_w4am(:,1)- f_opt)/f_opt)),'--+','LineWidth',2);
@@ -28,4 +28,4 @@ title('w4a');
 legend('ASGARD-DL','IPALM-APPROX','SMART-CD','IPALM-KATYUSHA');
 %legend('ASGARD-DL','IPALM-APPROX','SMART-CD');
 set(gcf,'Position',[10 10 400 400]);
-saveas(gcf,[pwd '/my plots/svm_w4a.eps']);
+saveas(gcf,[pwd '/my plots/svm_w4a.eps'],'epsc');
