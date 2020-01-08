@@ -80,7 +80,7 @@ To reproduce Figure 1(a) in our paper, do:
 >> g++ -o main main.cpp -lgsl -lgslcblas
 >> ./main 2 a news20scale2 0.01 1 100000 1200 1 100 100 
 >> ./main 2 c news20scale2 0.01 1 100000 1200 1000 50 
->> ./main 2 d news20scale2 0.01 1 100000 1200 0.01 
+>> ./main 2 d news20scale2 0.01 1 100000 1200 10 
 
 
 Then run
@@ -97,7 +97,7 @@ To reproduce Figure 1(b) in our paper, do:
 >> g++ -o main main.cpp -lgsl -lgslcblas
 >> ./main 2 a rcv1 0.01 1 100000 1200 1 100 100 
 >> ./main 2 c rcv1 0.01 1 100000 1200 1000 50 
->> ./main 2 d rcv1 0.01 1 100000 1200 0.01 
+>> ./main 2 d rcv1 0.01 1 100000 1200 10 
 
 
 Then run
@@ -114,7 +114,7 @@ To reproduce Figure 1(c) in our paper, do:
 >> g++ -o main main.cpp -lgsl -lgslcblas
 >> ./main 2 a rcv1mc 0.01 1 100000 1200 1 100 100 
 >> ./main 2 c rcv1mc 0.01 1 100000 1200 1000 50 
->> ./main 2 d rcv1mc 0.01 1 100000 1200 0.01 
+>> ./main 2 d rcv1mc 0.01 1 100000 1200 10 
 
 
 Then run
