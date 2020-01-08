@@ -197,9 +197,9 @@ To reproduce Figure 2(d) and 3(d) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 1 a news20binary_bp 0.01 1 100000 1200 0.01 1 50 
->> ./main 1 c news20binary_bp 0.01 1 100000 1200 0.1 50 
->> ./main 1 d news20binary_bp 0.01 1 100000 1200 0.1 
+>> ./main 1 a news20binary_bp 0.01 1 100000 2400 0.01 1 50 
+>> ./main 1 c news20binary_bp 0.01 1 100000 2400 0.1 50 
+>> ./main 1 d news20binary_bp 0.01 1 100000 2400 0.1 
 
 
 Then run
@@ -251,10 +251,10 @@ To reproduce Figure 4(c) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 3 a rcv1mc 0.01 0.01 100000 2400 1 100 100 
->> ./main 3 b rcv1mc 0.01 0.01 100000 2400 1 1 40 
->> ./main 3 c rcv1mc 0.01 0.01 100000 2400 10 50 
->> ./main 3 d rcv1mc 0.01 0.01 100000 2400 10 
+>> ./main 3 a rcv1mc 0.01 0.01 100000 3600 1 100 100 
+>> ./main 3 b rcv1mc 0.01 0.01 100000 3600 1 1 40 
+>> ./main 3 c rcv1mc 0.01 0.01 100000 3600 10 50 
+>> ./main 3 d rcv1mc 0.01 0.01 100000 3600 10 
 
 
 Then run
@@ -270,10 +270,10 @@ To reproduce Figure 4(d) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 3 a news20binary 0.01 0.01 100000 2400 1 100 100 
->> ./main 3 b news20binary 0.01 0.01 100000 2400 1 10 20 
->> ./main 3 c news20binary 0.01 0.01 100000 2400 10 10 
->> ./main 3 d news20binary 0.01 0.01 100000 2400 0.1 
+>> ./main 3 a news20binary 0.01 0.01 100000 3600 1 100 100 
+>> ./main 3 b news20binary 0.01 0.01 100000 3600 1 10 20 
+>> ./main 3 c news20binary 0.01 0.01 100000 3600 10 10 
+>> ./main 3 d news20binary 0.01 0.01 100000 3600 0.1 
 
 
 Then run
