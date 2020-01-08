@@ -621,8 +621,8 @@ public:
        rescale_Matrix();
 
        beta_s=beta_0;
-       if(max_Lf_s>0)
-         beta_s=min(beta_0,max_M_s/max_Lf_s);
+       //if(max_Lf_s>0)
+       //  beta_s=min(beta_0,max_M_s/max_Lf_s);
 
 
        epsilon_s=epsilon_0;
