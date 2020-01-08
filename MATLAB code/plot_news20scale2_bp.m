@@ -8,7 +8,7 @@ s3= size(SMART_CD_bp_news20scale2,1);
 figure(1);
 plot(ASGARD_fc_bp_news20scale2(1:10:s1,2),log10(abs(ASGARD_fc_bp_news20scale2(1:10:s1,5)- f_opt)/f_opt),'-->','LineWidth',2);
 hold on
-plot(DLRCSGR_eps_bp_news20scale2(1:15:s2,2),log10(abs(DLRCSGR_eps_bp_news20scale2(1:15:s2,5)- f_opt)/f_opt),'--s','LineWidth',2);
+plot(DLRCSGR_eps_bp_news20scale2(1:15:s2,2),log10(abs(100*DLRCSGR_eps_bp_news20scale2(1:15:s2,5)- f_opt)/f_opt),'--s','LineWidth',2);
 hold on
 %plot(DLRCSGR_m_bp_news20scale2(1:3:49,2),log10(abs(DLRCSGR_m_bp_news20scale2(1:3:49,5)- f_opt)/f_opt),'--o','LineWidth',2);
 %hold on
@@ -23,6 +23,7 @@ ylabel('log|F(x)- F^*|/F^*');
 title('news20scale2');
 %legend('ASGARD-fc','ASGARD-nurc');
 legend({'ASGARD-DL','IPALM-APPROX','SMART-CD'},'interpreter','latex','Fontsize',10);
+set(gcf,'Position',[10 10 350 400]);
 saveas(figure(1),[pwd '/my plots/bp_news20scale2_obj.eps']);
 figure(2);
 plot(ASGARD_fc_bp_news20scale2(1:10:s1,2),log10(ASGARD_fc_bp_news20scale2(1:10:s1,4)),'-->','LineWidth',2);
@@ -38,5 +39,5 @@ ylabel('log|Ax- b|');
 title('news20scale2');
 %legend('ASGARD-fc','ASGARD-nurc');
 legend({'ASGARD-DL','IPALM-APPROX','SMART-CD'},'interpreter','latex','Fontsize',10);
-set(gcf,'Position',[10 10 800 400]);
+set(gcf,'Position',[10 10 350 400]);
 saveas(figure(2),[pwd '/my plots/bp_news20scale2_infeas.eps']);
