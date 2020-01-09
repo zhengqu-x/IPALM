@@ -271,7 +271,7 @@ To reproduce Figure 4(d) in our paper, do:
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
 >> ./main 3 a news20binary 0.01 0.01 100000 3600 1 100 100 
->> ./main 3 b news20binary 0.01 0.01 100000 3600 1 10 10 
+>> ./main 3 b news20binary 0.01 0.01 100000 3600 1 10 20 
 >> ./main 3 c news20binary 0.01 0.01 100000 3600 10 10 
 >> ./main 3 d news20binary 0.01 0.01 100000 3600 0.1 
 
