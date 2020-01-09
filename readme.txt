@@ -86,7 +86,7 @@ To reproduce Figure 1(a) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>Matlab plot_news20scale2_lasso
+>>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_news20scale2_lasso.m
 
 
 
@@ -103,7 +103,7 @@ To reproduce Figure 1(b) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>Matlab plot_rcv1_lasso
+>>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_rcv1_lasso.m
 
 
 
@@ -120,7 +120,7 @@ To reproduce Figure 1(c) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>Matlab plot_rcv1mc_lasso
+>>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_rcv1mc_lasso.m
 
 
 
@@ -137,7 +137,7 @@ To reproduce Figure 1(d) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>Matlab plot_news20binary_lasso
+>>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_news20binary_lasso.m
 
 
 
@@ -154,7 +154,7 @@ To reproduce Figure 2(a) and 3(a) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>Matlab plot_news20scale2_bp
+>>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_news20scale2_bp.m
 
 
 
@@ -171,7 +171,7 @@ To reproduce Figure 2(b) and 3(b) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>Matlab plot_rcv1_bp
+>>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_rcv1_bp.m
 
 
 
@@ -188,7 +188,7 @@ To reproduce Figure 2(c) and 3(c) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>Matlab plot_rcv1mc_bp
+>>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_rcv1mc_bp.m
 
 
 
@@ -205,7 +205,7 @@ To reproduce Figure 2(d) and 3(d) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>Matlab plot_news20binary_bp
+>>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_news20binary_bp.m
 
 
 
@@ -223,7 +223,7 @@ To reproduce Figure 4(a) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>Matlab plot_news20scale2_fl
+>>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_news20scale2_fl.m
 
 
 
@@ -241,7 +241,7 @@ To reproduce Figure 4(b) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>Matlab plot_rcv1_fl
+>>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_rcv1_fl.m
 
 
 
@@ -260,7 +260,7 @@ To reproduce Figure 4(c) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>Matlab plot_rcv1mc_fl
+>>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_rcv1mc_fl.m
 
 
 
@@ -271,7 +271,7 @@ To reproduce Figure 4(d) in our paper, do:
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
 >> ./main 3 a news20binary 0.01 0.01 100000 3600 1 100 100 
->> ./main 3 b news20binary 0.01 0.01 100000 3600 1 10 20 
+>> ./main 3 b news20binary 0.01 0.01 100000 3600 1 10 10 
 >> ./main 3 c news20binary 0.01 0.01 100000 3600 10 10 
 >> ./main 3 d news20binary 0.01 0.01 100000 3600 0.1 
 
@@ -279,7 +279,7 @@ To reproduce Figure 4(d) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>Matlab plot_news20binary_fl
+>>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_news20binary_fl.m
 
 
 
@@ -298,7 +298,7 @@ To reproduce Figure 5(a) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>Matlab plot_w4a_svm
+>>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_w4a_svm.m
 
 
 
@@ -316,7 +316,7 @@ To reproduce Figure 5(b) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>Matlab plot_a7a_svm
+>>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_a7a_svm.m
 
 
 
@@ -335,7 +335,7 @@ To reproduce Figure 5(c) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>Matlab plot_a8a_svm
+>>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_a8a_svm.m
 
 
 
@@ -354,7 +354,7 @@ To reproduce Figure 5(d) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>Matlab plot_a9a_svm
+>>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_a9a_svm.m
 
 
 
@@ -374,7 +374,7 @@ To reproduce Figure 5(e) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>Matlab plot_w6a_svm
+>>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_w6a_svm.m
 
 
 
@@ -393,7 +393,7 @@ To reproduce Figure 5(f) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>Matlab plot_w7a_svm
+>>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_w7a_svm.m
 
 
 
@@ -412,7 +412,7 @@ To reproduce Figure 5(g) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>Matlab plot_ijcnn_svm
+>>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_ijcnn_svm.m
 
 
 
@@ -432,7 +432,7 @@ To reproduce Figure 5(h) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>Matlab plot_realsim_svm
+>>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_realsim_svm.m
 
 
 All the plots are saved in .eps format in the folder Matlab code/my plots/
