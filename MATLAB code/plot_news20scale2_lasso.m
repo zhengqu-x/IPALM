@@ -22,4 +22,4 @@ ylabel('log|F(x)- F^*|/F^*');
 title('news20scale2');
 legend('ASGARD-DL','IPALM-APPROX','SMART-CD');
 set(gcf,'Position',[10 10 400 400]);
-saveas(gcf,[pwd '/my plots/lasso_news20scale2.eps']);
+saveas(gcf,[pwd '/my plots/lasso_news20scale2.eps'],'epsc');
