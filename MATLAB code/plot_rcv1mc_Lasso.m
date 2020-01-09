@@ -23,4 +23,4 @@ ylabel('log|F(x)- F^*|/F^*');
 title('rcv1mc');
 legend('ASGARD-DL','IPALM-APPROX','SMART-CD');
 set(gcf,'Position',[10 10 400 400]);
-saveas(gcf,[pwd '/my plots/lasso_rcv1mc.eps']);
+saveas(gcf,[pwd '/my plots/lasso_rcv1mc.eps'],'epsc');
