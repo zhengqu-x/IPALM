@@ -22,4 +22,4 @@ ylabel('log|F(x)- F^*|/F^*');
 title('news20binary');
 legend({'ASGARD-DL','IPALM-APPROX','SMART-CD'},'interpreter','latex','Fontsize',10);
 set(gcf,'Position',[10 10 400 400]);
-saveas(gcf,[pwd '/my plots/lasso_news20binary.eps']);
+saveas(gcf,[pwd '/my plots/lasso_news20binary.eps'],'epsc');
