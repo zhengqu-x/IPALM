@@ -148,7 +148,7 @@ To reproduce Figure 2(a) and 3(a) in our paper, do:
 >> g++ -o main main.cpp -lgsl -lgslcblas
 >> ./main 1 a news20scale2 0.01 1 100000 1800 0.01 1 50 
 >> ./main 1 c news20scale2 1 1 100000 1800 1 50 
->> ./main 1 d news20scale2 1 1 100000 1800 1 
+>> ./main 1 d news20scale2 1 1 100000 2400 1 
 
 
 Then run
@@ -182,7 +182,7 @@ To reproduce Figure 2(c) and 3(c) in our paper, do:
 >> g++ -o main main.cpp -lgsl -lgslcblas
 >> ./main 1 a rcv1mc 0.01 1 100000 3600 0.01 1 50 
 >> ./main 1 c rcv1mc 0.01 1 100000 3600 1 50 
->> ./main 1 d rcv1mc 0.01 1 100000 3600 1 
+>> ./main 1 d rcv1mc 0.01 1 100000 4200 1 
 
 
 Then run
