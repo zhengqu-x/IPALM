@@ -28,4 +28,4 @@ title('news20binary');
 %legend('ASGARD-fc','DLRCSGR-eps','DLRCSGR-m','SMART-CD');
 legend('ASGARD-DL','IPALM-APPROX','SMART-CD','IPALM-KATYUSHA');
 set(gcf,'Position',[10 10 400 400]);
-saveas(gcf,[pwd '/my plots/fl_news20binary.eps']);
+saveas(gcf,[pwd '/my plots/fl_news20binary.eps'],'epsc');
