@@ -40,4 +40,4 @@ title('news20scale2');
 %legend('ASGARD-fc','ASGARD-nurc');
 legend({'ASGARD-DL','IPALM-APPROX','SMART-CD'},'interpreter','latex','Fontsize',10);
 set(gcf,'Position',[10 10 350 400]);
-saveas(figure(2),[pwd '/my plots/bp_news20scale2_infeas.eps']);
+saveas(figure(2),[pwd '/my plots/bp_news20scale2_infeas.eps'],'epsc');
