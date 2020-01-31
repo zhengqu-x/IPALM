@@ -1,5 +1,5 @@
-#ifndef SMSVM_H
-#define SMSVM_H
+#ifndef SMSVM_B_H
+#define SMSVM_B_H
 
 #include "ALM_Katyusha.h"
 #include <string>
@@ -24,7 +24,7 @@
 
 
 template<typename L, typename D>
-class SMSVM: public ALM_Katyusha<L, D>
+class SMSVM_b: public ALM_Katyusha<L, D>
 {
 private:
 
@@ -41,7 +41,7 @@ public:
 	D sig1;
 	D sig2;
 
-  SMSVM(const char* Matrix_file,D val_lambda1, D val_lambda2)
+  SMSVM_b(const char* Matrix_file,D val_lambda1, D val_lambda2)
   :ALM_Katyusha<L,D>(),my_A(Matrix_file)
   {
     sig1=val_lambda1;
