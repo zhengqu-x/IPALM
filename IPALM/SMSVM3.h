@@ -4,7 +4,7 @@
 
 
 #include "Matrix.h"
-#include "DLRCSGR3.h"
+#include "ALM_APPROX.h"
 #include <string>
 #include <gsl/gsl_rng.h>
 #include <gsl/gsl_randist.h>
@@ -16,11 +16,11 @@
 #include <ctime>
 #include <math.h>
 
-//This class solves problem: min_{x,omega} \sum_i max(1- b_i^T(A_ix+ omega), 0)+ g(x) 
-// where g(x)=\frac{lambda2}{2}\|x\|_2^2 +lambda1\|x\|_1.
+//This class solves problem: min_{x,omega} \sum_i max(1- b_i^T(A_ix+ omega), 0)+ P(x) 
+// where P(x)=\frac{lambda2}{2}\|x\|_2^2 +lambda1\|x\|_1.
 
 // Let X= (x; omega), M= (b.*A b), b_i^T(A_ix+ omega)= M_iX
-// phi_i(x)= 0, h_i(x)= max(1- x,0) 
+// phi_i(x)= 0, h_i(x)= max(1- x,0), g(X)= P(x).
 
 
 
@@ -28,7 +28,7 @@
 
 
 template<typename L, typename D>
-class SMSVM3: public DLRCSGR3<L, D>
+class SMSVM3: public ALM_APPROX<L, D>
 {
 private:
 
@@ -48,7 +48,7 @@ protected:
 public:
 
   SMSVM3(const char* Matrix_file,D val_lambda1, D val_lambda2)
-  :DLRCSGR3<L,D>(),my_M(Matrix_file)
+  :ALM_APPROX<L,D>(),my_M(Matrix_file)
   {
     lambda1=val_lambda1;
     lambda2=val_lambda2;
@@ -212,8 +212,8 @@ public:
   
   
 
-  void DLRCSGR3_solver(D beta_0, D epsilon_0,  D eta, D rho,vector<D> & x0,vector<D> & y0,L val_tau, L max_nb_outer, L p_N_1, L p_N_2,string filename1, string filename2, D time){
-    this->DLRCSGR3_solve_with_APPROX(beta_0, epsilon_0,  eta, rho,x0,y0, val_tau, max_nb_outer,  p_N_1,  p_N_2,  val_lambda_f, filename1,  filename2, time);
+  void ALM_APPROX_solver(D beta_0, D epsilon_0,  D eta, D rho,vector<D> & x0,vector<D> & y0,L val_tau, L max_nb_outer, L p_N_1, L p_N_2,string filename1, string filename2, D time){
+    this->ALM_APPROX_solve_with_APPROX(beta_0, epsilon_0,  eta, rho,x0,y0, val_tau, max_nb_outer,  p_N_1,  p_N_2,  val_lambda_f, filename1,  filename2, time);
 }
 
 
