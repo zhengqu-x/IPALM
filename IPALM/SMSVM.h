@@ -16,8 +16,8 @@
 //This class solves problem: min_{x,omega} \sum_i max(1- b_i^T(A_ix+ omega), 0)+ P(x) by IPALM_Katyusha 
 // where P(x)=\frac{sig2}{2}\|x\|_2^2 +sig1\|x\|_1.
 
-// Let X= (x; omega), M= (b.*A b), b_i^T(A_ix+ omega)= MX
-// f^i(x)= 0, h^i(x)= max(1- x,0) 
+// Let X= (x; omega), M= (b.*A b), b_i^T(A_ix+ omega)= M_iX
+// f^i(x)= 0, h^i(x)= max(1- x,0).
 
 
 
