@@ -1,5 +1,5 @@
-#ifndef L_1_LASSO4_H
-#define L_1_LASSO4_H
+#ifndef L_1_LASSO_A_H
+#define L_1_LASSO_A_H
 
 
 
@@ -26,7 +26,7 @@
 
 
 template<typename L, typename D>
-class L_1_Lasso4: public ALM_APPROX<L, D>
+class L_1_Lasso_a: public ALM_APPROX<L, D>
 {
 private:
 
@@ -47,7 +47,7 @@ protected:
 
 public:
 
-  L_1_Lasso4(const char* Matrix_file,D val_lambda1, D val_lambda2, D val_lambda3)
+  L_1_Lasso_a(const char* Matrix_file,D val_lambda1, D val_lambda2, D val_lambda3)
   :ALM_APPROX<L,D>(),my_M(Matrix_file)
   {
     lambda1=val_lambda1;
