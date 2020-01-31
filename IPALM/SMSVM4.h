@@ -16,9 +16,11 @@
 #include <ctime>
 #include <math.h>
 
-//This class solves problem of the form f(x)+g(x) under the constraint Mx=c;
-// where f(x)=0
-//and g(x)=\frac{lambda2}{2}\|x\|_2+lambda1\|x\|_1.
+//This class solves problem: min_{x,omega} \sum_i max(1- b_i^T(A_ix+ omega), 0)+ P(x) by SMART_CD
+// where P(x)=\frac{lambda2}{2}\|x\|_2^2 +lambda1\|x\|_1.
+
+// Let X= (x; omega), M= (b.*A b), b_i^T(A_ix+ omega)= M_iX
+// phi_i(x)= 0, h_i(x)= max(1- x,0), g(X)= P(x).
 
 
 
