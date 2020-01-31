@@ -16,9 +16,10 @@
 #include <ctime>
 #include <math.h>
 
-//This class solves problem of the form f(x)+g(x) under the constraint Mx=c;
-// where f(x)=0
-//and g(x)=\frac{lambda2}{2}\|x\|_2+lambda1\|x\|_1.
+//This class solves problem: min_x f(x)+ g(x)+ h(Mx) by SMART_CD;
+// where g(x)=\frac{lambda2}{2}\|x\|_2^2 +lambda1\|x\|_1;
+// f(x)= 1/2*\|Ax- b\|_2^2= \sum_i phi_i(A_ix);
+// phi_i(x)= 0.5*(x- b_i)^2, h_i(x)= \|x\|, Mx= (x^1- x^2, ..., x_n- x_1).
 
 
 
