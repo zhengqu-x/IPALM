@@ -46,7 +46,7 @@ protected:
 public:
 
   Basis_pursuit3(const char* Matrix_file,D val_lambda1, D val_lambda2)
-  :ALM2<L,D>(),my_M(Matrix_file)
+  :ALM_I_APG<L,D>(),my_M(Matrix_file)
   {
     lambda1=val_lambda1;
     lambda2=val_lambda2;
