@@ -1,5 +1,5 @@
-#ifndef BASIS_PURSUIT4_H
-#define BASIS_PURSUIT4_H
+#ifndef BASIS_PURSUIT_A_H
+#define BASIS_PURSUIT_A_H
 
 
 
@@ -26,7 +26,7 @@
 
 
 template<typename L, typename D>
-class Basis_pursuit4: public ALM_I_APPROX<L, D>
+class Basis_pursuit_a: public ALM_I_APPROX<L, D>
 {
 private:
 
@@ -47,7 +47,7 @@ protected:
 
 public:
 
-  Basis_pursuit4(const char* Matrix_file,D val_lambda1, D val_lambda2)
+  Basis_pursuit_a(const char* Matrix_file,D val_lambda1, D val_lambda2)
   :ALM_I_APPROX<L,D>(), my_M(Matrix_file)
   {
     lambda1=val_lambda1;
