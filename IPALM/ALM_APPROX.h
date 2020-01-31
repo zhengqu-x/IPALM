@@ -1,5 +1,5 @@
-#ifndef DLRCSGR3_H
-#define DLRCSGR3_H
+#ifndef ALM_APPROX_H
+#define ALM_APPROX_H
 
 
 
@@ -21,12 +21,13 @@
 //and g(x)=sum_{i=1}^n g_i(x_i). We all assume that each \phi_j is 1-smooth.
 
 // Each subproblem solves problem of the form f(x)+ h_{\beta_s}(Mx;\lambda_s) +g(x)+ \beta_s/2\|x-x_s\|^2 by restart APPROX
+// This header file implements IPALM_APPROX
 
 
 
 
 template<typename L, typename D>
-class DLRCSGR3: public APPROX2<L, D>
+class ALM_APPROX: public APPROX2<L, D>
 {
 private:
 
@@ -118,19 +119,19 @@ protected:
 
   D function_value;
 
-  L print_every_N_DLRCSGR3;
+  L print_every_N_ALM_APPROX;
 
-  D running_time_DLRCSGR3;
+  D running_time_ALM_APPROX;
 
   L nb_outer_iters;
 
   std::vector<D> gradient_of_f;
 
-  ofstream samp_DLRCSGR3;
+  ofstream samp_ALM_APPROX;
   
-  ofstream samp_x_DLRCSGR3;
+  ofstream samp_x_ALM_APPROX;
   
-  ofstream samp_lambda_DLRCSGR3;
+  ofstream samp_lambda_ALM_APPROX;
   
 public:
 
@@ -160,13 +161,13 @@ public:
   virtual inline D distance_to_subgradient_of_g(){return D(NULL);}
   //virtual inline D distance_to_subgradient_of_g(std::vector<D> &, std::vector<D> & ){return D(NULL);}
 
-  DLRCSGR3(const char* Matrix_file, D val_lambda_f)
+  ALM_APPROX(const char* Matrix_file, D val_lambda_f)
   :data_A(), data_M()
   {
 
   }
 
-  DLRCSGR3()
+  ALM_APPROX()
   :data_A(), data_M()
   {
 
@@ -842,18 +843,18 @@ public:
   }
 
    inline void compute_and_record_res(){
-        if(nb_outer_iters%print_every_N_DLRCSGR3==0){
+        if(nb_outer_iters%print_every_N_ALM_APPROX==0){
           //compute_KKT_residual();
           compute_function_value();
-          cout<<setprecision(9)<<"Iteration: "<<nb_outer_iters<<"; time="<<running_time_DLRCSGR3<<"; function value="<<function_value<<endl;
-          samp_DLRCSGR3<<setprecision(9)<<nb_outer_iters<<" "<<running_time_DLRCSGR3<<" "<<function_value<<" "<<endl;
+          cout<<setprecision(9)<<"Iteration: "<<nb_outer_iters<<"; time="<<running_time_ALM_APPROX<<"; function value="<<function_value<<endl;
+          samp_ALM_APPROX<<setprecision(9)<<nb_outer_iters<<" "<<running_time_ALM_APPROX<<" "<<function_value<<" "<<endl;
         }
    }
 
  
 
 
-   void DLRCSGR3_solve_with_APPROX(D beta_0, D epsilon_0,  D eta, D rho, vector<D> & x0,vector<D> & y0, L val_tau, L max_nb_outer, L p_N_1, L p_N_2, D val_lambda_f,string filename1, string filename2, D time){
+   void ALM_APPROX_solve_with_APPROX(D beta_0, D epsilon_0,  D eta, D rho, vector<D> & x0,vector<D> & y0, L val_tau, L max_nb_outer, L p_N_1, L p_N_2, D val_lambda_f,string filename1, string filename2, D time){
       Initialize(beta_0, epsilon_0, eta, rho,val_tau, x0, y0, val_lambda_f);
 
       nb_outer_iters=0;
@@ -862,11 +863,11 @@ public:
       string sampname_x="results/DLRCSGR3_x_"+filename1;
       string sampname_lambda="results/DLRCSGR3_lambda_"+filename1;
       filename1="results/DLRCSGR3_"+filename1;
-      samp_DLRCSGR3.open(filename1.c_str());
-      samp_x_DLRCSGR3.open(sampname_x.c_str());
-      samp_lambda_DLRCSGR3.open(sampname_lambda.c_str());
-      running_time_DLRCSGR3=0;
-      print_every_N_DLRCSGR3=p_N_1;
+      samp_ALM_APPROX.open(filename1.c_str());
+      samp_x_ALM_APPROX.open(sampname_x.c_str());
+      samp_lambda_ALM_APPROX.open(sampname_lambda.c_str());
+      running_time_ALM_APPROX=0;
+      print_every_N_ALM_APPROX=p_N_1;
       compute_and_record_res();
       D start;
       start = std::clock();
@@ -899,11 +900,11 @@ public:
       momentum_update();
       update_m_s(val_tau);
       nb_outer_iters++;
-      running_time_DLRCSGR3+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
+      running_time_ALM_APPROX+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
       compute_and_record_res();
       start = std::clock();
       reset_everything();
-      running_time_DLRCSGR3+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
+      running_time_ALM_APPROX+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
       while(nb_outer_iters<max_nb_outer){
          start = std::clock();
          cout<<"ms="<<ceil(m_s/this->n*val_tau)<<"; beta_s="<<beta_s<<"; epsilon_s"<<epsilon_s<<endl;
@@ -931,21 +932,21 @@ public:
          momentum_update();
          update_m_s(val_tau);
          nb_outer_iters++;
-         running_time_DLRCSGR3+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
+         running_time_ALM_APPROX+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
          testing();
          compute_and_record_res();
          start = std::clock();
          reset_everything();
-         running_time_DLRCSGR3+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
-         if (running_time_DLRCSGR3> time){
+         running_time_ALM_APPROX+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
+         if (running_time_ALM_APPROX> time){
          	break;
 		 }
       }
       for (L i= 0; i< this->n; i++){
-      	samp_x_DLRCSGR3<< x_s[i]<< endl;
+      	samp_x_ALM_APPROX<< x_s[i]<< endl;
 	  }
 	  for (L i= 0; i< m_2; i++){
-      	samp_lambda_DLRCSGR3<< lambda_s[i]<< endl;
+      	samp_lambda_ALM_APPROX<< lambda_s[i]<< endl;
 	  }
 
    }
