@@ -1,5 +1,5 @@
-#ifndef ALM2_H
-#define ALM2_H
+#ifndef ALM_I_APG_H
+#define ALM_I_APG_H
 
 
 
@@ -20,13 +20,14 @@
 // where f(x)=\sum_{j=1}^m lambda_f[j] \phi_j(<A_j,x>)
 //and g(x)=sum_{i=1}^n g_i(x_i). We all assume that each \phi_j is 1-smooth.
 
-// Each subproblem solves problem of the form f(x)+<Mx-c, lambda_s>+1/2beta_s\|Mx-c\|^2+g(x)+\beta_s/2\|x-x_s\|^2
+// Each subproblem solves problem of the form f(x)+<Mx-c, lambda_s>+1/2beta_s\|Mx-c\|^2+g(x) by APG. 
+// This header file implements ASGARD.
 
 
 
 
 template<typename L, typename D>
-class ALM2: public APPROX2<L, D>
+class ALM_I_APG: public APPROX2<L, D>
 {
 private:
 
@@ -104,15 +105,15 @@ protected:
 
   D function_value;
 
-  L print_every_N_ALM2;
+  L print_every_N_ALM_I_APG;
 
-  D running_time_ALM2;
+  D running_time_ALM_I_APG;
 
   L nb_outer_iters;
 
   std::vector<D> gradient_of_f;
 
-  ofstream samp_ALM2;
+  ofstream samp_ALM_I_APG;
 public:
 
 
@@ -138,13 +139,13 @@ public:
   virtual inline D distance_to_subgradient_of_g(){return D(NULL);}
   //virtual inline D distance_to_subgradient_of_g(std::vector<D> &, std::vector<D> & ){return D(NULL);}
 
-  ALM2(const char* Matrix_file, D val_lambda_f)
+  ALM_I_APG(const char* Matrix_file, D val_lambda_f)
   :data_A(), data_M()
   {
 
   }
 
-  ALM2()
+  ALM_I_APG()
   :data_A(), data_M()
   {
 
@@ -627,8 +628,8 @@ public:
        rescale_Matrix();
 
        beta_s=beta_0;
-       if(max_Lf_s>0)
-         beta_s=min(beta_0,max_M_s/max_Lf_s);
+       //if(max_Lf_s>0)
+       //  beta_s=min(beta_0,max_M_s/max_Lf_s);
 
 
        epsilon_s=epsilon_0;
@@ -723,11 +724,11 @@ public:
 
 
    inline void compute_and_record_res(){
-        if(nb_outer_iters%print_every_N_ALM2==0){
+        if(nb_outer_iters%print_every_N_ALM_I_APG==0){
           compute_KKT_residual();
           compute_function_value();
-          cout<<setprecision(9)<<"Iteration: "<<nb_outer_iters<<"; time="<<running_time_ALM2<<"; residual1="<<residual1<<" residual2="<<residual2<<"; function value="<<function_value<<endl;
-          samp_ALM2<<setprecision(9)<<nb_outer_iters<<" "<<running_time_ALM2<<" "<<residual1<<" "<<residual2<<" "<<function_value<<" "<<endl;
+          cout<<setprecision(9)<<"Iteration: "<<nb_outer_iters<<"; time="<<running_time_ALM_I_APG<<"; residual1="<<residual1<<" residual2="<<residual2<<"; function value="<<function_value<<endl;
+          samp_ALM_I_APG<<setprecision(9)<<nb_outer_iters<<" "<<running_time_ALM_I_APG<<" "<<residual1<<" "<<residual2<<" "<<function_value<<" "<<endl;
         }
    }
 
@@ -741,9 +742,9 @@ public:
       string sampname2="results/APPROXMU_"+filename2;
       this->samp.open(sampname2.c_str());
       filename1="results/ALM2_"+filename1;
-      samp_ALM2.open(filename1.c_str());
-      running_time_ALM2=0;
-      print_every_N_ALM2=p_N_1;
+      samp_ALM_I_APG.open(filename1.c_str());
+      running_time_ALM_I_APG=0;
+      print_every_N_ALM_I_APG=p_N_1;
       compute_and_record_res();
       D start;
       start = std::clock();
@@ -758,11 +759,11 @@ public:
       compute_x();
       update_y();
       nb_outer_iters++;
-      running_time_ALM2+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
+      running_time_ALM_I_APG+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
       compute_and_record_res();
       start = std::clock();
       reset_everything();
-      running_time_ALM2+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
+      running_time_ALM_I_APG+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
       while(nb_outer_iters<max_nb_outer){
          start = std::clock();
          cout<<"ms="<<ceil(m_s/this->n*val_tau)<<"; beta_s="<<beta_s<<"; epsilon_s"<<epsilon_s<<endl;
@@ -776,13 +777,13 @@ public:
          compute_x();
          update_y();
          nb_outer_iters++;
-         running_time_ALM2+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
+         running_time_ALM_I_APG+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
          testing();
          compute_and_record_res();
          start = std::clock();
          reset_everything();
-         running_time_ALM2+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
-         if (running_time_ALM2> time){
+         running_time_ALM_I_APG+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
+         if (running_time_ALM_I_APG> time){
          	break;
 		 }
       }
