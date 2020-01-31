@@ -1,5 +1,5 @@
-#ifndef BASIS_PURSUIT6_H
-#define BASIS_PURSUIT6_H
+#ifndef BASIS_PURSUIT_C_H
+#define BASIS_PURSUIT_C_H
 
 
 
@@ -25,7 +25,7 @@
 
 
 template<typename L, typename D>
-class Basis_pursuit6: public PDCD_I<L, D>
+class Basis_pursuit_c: public PDCD_I<L, D>
 {
 private:
 
@@ -44,7 +44,7 @@ protected:
 
 public:
 
-  Basis_pursuit6(const char* Matrix_file,D val_lambda1, D val_lambda2)
+  Basis_pursuit_c(const char* Matrix_file,D val_lambda1, D val_lambda2)
   :PDCD_I<L,D>(),my_M(Matrix_file)
   {
     lambda1=val_lambda1;
