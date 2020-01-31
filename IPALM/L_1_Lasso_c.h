@@ -1,5 +1,5 @@
-#ifndef L_1_LASSO5_H
-#define L_1_LASSO5_H
+#ifndef L_1_LASSO_C_H
+#define L_1_LASSO_C_H
 
 
 
@@ -25,7 +25,7 @@
 
 
 template<typename L, typename D>
-class L_1_Lasso5: public PDCD<L, D>
+class L_1_Lasso_c: public PDCD<L, D>
 {
 private:
 
@@ -46,7 +46,7 @@ protected:
 
 public:
 
-  L_1_Lasso5(const char* Matrix_file,D val_lambda1, D val_lambda2, D val_lambda3)
+  L_1_Lasso_c(const char* Matrix_file,D val_lambda1, D val_lambda2, D val_lambda3)
   :PDCD<L,D>(),my_M(Matrix_file)
   {
     lambda1=val_lambda1;
