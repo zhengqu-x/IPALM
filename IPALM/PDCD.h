@@ -2,8 +2,6 @@
 #define PDCD_H
 
 
-
-
 #include <string>
 #include <gsl/gsl_rng.h>
 #include <gsl/gsl_randist.h>
@@ -15,6 +13,12 @@
 #include <ctime>
 #include <math.h>
 
+
+//This class solves problem of the form f(x)+g(x)+h(Mx) ;
+// where f(x)=\sum_{j=1}^m lambda_f[j] \phi_j(<A_j,x>)
+//and g(x)=sum_{i=1}^n g_i(x_i). We all assume that each \phi_j is 1-smooth.
+
+// This header file implements SMART_CD
 
 template<typename L, typename D>
 class PDCD
