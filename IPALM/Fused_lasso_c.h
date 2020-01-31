@@ -1,5 +1,5 @@
-#ifndef FUSED_LASSO5_H
-#define FUSED_LASSO5_H
+#ifndef FUSED_LASSO_C_H
+#define FUSED_LASSO_C_H
 
 
 
@@ -26,7 +26,7 @@
 
 
 template<typename L, typename D>
-class Fused_lasso5: public PDCD<L, D>
+class Fused_lasso_c: public PDCD<L, D>
 {
 private:
 
@@ -49,7 +49,7 @@ protected:
 
 public:
 
-  Fused_lasso5(const char* Matrix_file,const char* Matrix_file2, D val_lambda1, D val_lambda2, D val_lambda3)
+  Fused_lasso_c(const char* Matrix_file,const char* Matrix_file2, D val_lambda1, D val_lambda2, D val_lambda3)
   :PDCD<L,D>(),my_A(Matrix_file), my_M(Matrix_file2)
   {
     lambda1=val_lambda1;
@@ -60,7 +60,7 @@ public:
     this->mu_g=lambda2;
   }
   
-Fused_lasso5(const char* Matrix_file, D val_lambda1, D val_lambda2, D val_lambda3)
+Fused_lasso_c(const char* Matrix_file, D val_lambda1, D val_lambda2, D val_lambda3)
   :PDCD<L,D>(),my_A(Matrix_file)
   {
     lambda1=val_lambda1;
