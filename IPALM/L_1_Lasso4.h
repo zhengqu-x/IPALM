@@ -5,7 +5,7 @@
 
 #include "Matrix.h"
 #include "APPROX2.h"
-#include "DLRCSGR3.h"
+#include "ALM_APPROX.h"
 #include <string>
 #include <gsl/gsl_rng.h>
 #include <gsl/gsl_randist.h>
@@ -17,16 +17,16 @@
 #include <ctime>
 #include <math.h>
 
-//This class solves problem of the form lambda3\|Ax- b\|_1+ g(x);
+//This class solves problem of the form lambda3\|Ax- b\|_1+ g(x) by IPALM_APPROX;
 // where g(x)=\frac{lambda2}{2}\|x\|_2+lambda1\|x\|_1.
-// phi_i(x)= 0, h_i(x)= lambda3\|x\|_1.
+// phi_i(x)= 0, h_i(x)= lambda3\|x- b_i\|_1.
 
 
 
 
 
 template<typename L, typename D>
-class L_1_Lasso4: public DLRCSGR3<L, D>
+class L_1_Lasso4: public ALM_APPROX<L, D>
 {
 private:
 
@@ -48,7 +48,7 @@ protected:
 public:
 
   L_1_Lasso4(const char* Matrix_file,D val_lambda1, D val_lambda2, D val_lambda3)
-  :DLRCSGR3<L,D>(),my_M(Matrix_file)
+  :ALM_APPROX<L,D>(),my_M(Matrix_file)
   {
     lambda1=val_lambda1;
     lambda2=val_lambda2;
@@ -191,8 +191,8 @@ public:
   
   
 
-  void DLRCSGR3_solver(D beta_0, D epsilon_0,  D eta, D rho, vector<D> & x0,vector<D> & y0,L val_tau, L max_nb_outer, L p_N_1, L p_N_2,string filename1, string filename2, D time){
-    this->DLRCSGR3_solve_with_APPROX(beta_0, epsilon_0, eta, rho,x0,y0, val_tau, max_nb_outer,  p_N_1,  p_N_2,  val_lambda_f, filename1,  filename2, time);
+  void ALM_APPROX_solver(D beta_0, D epsilon_0,  D eta, D rho, vector<D> & x0,vector<D> & y0,L val_tau, L max_nb_outer, L p_N_1, L p_N_2,string filename1, string filename2, D time){
+    this->ALM_APPROX_solve_with_APPROX(beta_0, epsilon_0, eta, rho,x0,y0, val_tau, max_nb_outer,  p_N_1,  p_N_2,  val_lambda_f, filename1,  filename2, time);
 }
 
 
