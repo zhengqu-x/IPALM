@@ -17,7 +17,7 @@
 //#include "cmd_line.h"
 
 
-//This class implements the method loopless kATYUSHA with arbitrary sampling
+//This class implements the method IPALM_Katyusha
 
 /*
 The optimization problem to solve is:
