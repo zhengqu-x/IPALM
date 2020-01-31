@@ -1,5 +1,5 @@
-#ifndef SMSVM3_H
-#define SMSVM3_H
+#ifndef SMSVM_A_H
+#define SMSVM_A_H
 
 
 
@@ -28,7 +28,7 @@
 
 
 template<typename L, typename D>
-class SMSVM3: public ALM_APPROX<L, D>
+class SMSVM_a: public ALM_APPROX<L, D>
 {
 private:
 
@@ -47,7 +47,7 @@ protected:
 
 public:
 
-  SMSVM3(const char* Matrix_file,D val_lambda1, D val_lambda2)
+  SMSVM_a(const char* Matrix_file,D val_lambda1, D val_lambda2)
   :ALM_APPROX<L,D>(),my_M(Matrix_file)
   {
     lambda1=val_lambda1;
