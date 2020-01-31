@@ -16,10 +16,9 @@
 #include <ctime>
 #include <math.h>
 
-//This class solves problem of the form f(x)+g(x)+ h(MX);
-// where f(x)= \sum_{j=1}^m lambda_f[j] \phi_j(<A_j,x>)
-//and g(x)=\frac{lambda2}{2}\|x\|_2+lambda1\|x\|_1.
-// h(x)= lambda3\|x\|_1.
+//This class solves problem of the form lambda3\|Ax- b\|_1+ g(x) by SMART_CD;
+// where g(x)=\frac{lambda2}{2}\|x\|_2+lambda1\|x\|_1.
+// phi_i(x)= 0, h_i(x)= lambda3\|x- b_i\|_1.
 
 
 
