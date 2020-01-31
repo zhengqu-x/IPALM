@@ -1,5 +1,5 @@
-#ifndef FUSED_LASSO4_H
-#define FUSED_LASSO4_H
+#ifndef FUSED_LASSO_A_H
+#define FUSED_LASSO_A_H
 
 
 
@@ -27,7 +27,7 @@
 
 
 template<typename L, typename D>
-class Fused_lasso4: public ALM_APPROX<L, D>
+class Fused_lasso_a: public ALM_APPROX<L, D>
 {
 private:
 
@@ -50,7 +50,7 @@ protected:
 
 public:
 
-  Fused_lasso4(const char* Matrix_file,const char* Matrix_file2, D val_lambda1, D val_lambda2, D val_lambda3)
+  Fused_lasso_a(const char* Matrix_file,const char* Matrix_file2, D val_lambda1, D val_lambda2, D val_lambda3)
   :ALM_APPROX<L,D>(),my_A(Matrix_file), my_M(Matrix_file2)
   {
     lambda1=val_lambda1;
@@ -62,7 +62,7 @@ public:
     this->val_L_h= lambda3;
   }
   
-Fused_lasso4(const char* Matrix_file,D val_lambda1, D val_lambda2, D val_lambda3)
+Fused_lasso_a(const char* Matrix_file,D val_lambda1, D val_lambda2, D val_lambda3)
   :ALM_APPROX<L,D>(),my_A(Matrix_file)
   {
     lambda1=val_lambda1;
