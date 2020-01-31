@@ -81,7 +81,7 @@
                 filename2="BP_inner_"+filename+"tau_"+tau_str;
                 rho= 0.9;
                 eta= 0.95;
-                bp4.ALM3_solver(beta_0,epsilon_0,eta,rho,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time);
+                bp4.ALM_I_APPROX_solver(beta_0,epsilon_0,eta,rho,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time);
                 break;
                 }
                 case 'b': {
@@ -114,7 +114,7 @@
 			    filename2="BP_inner_"+filename+"tau_"+tau_str;
                 rho= 0.9;
                 eta= 0.95;
-                bp3.ALM2_solver(beta_0,epsilon_0,eta,rho,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time);
+                bp3.ALM_I_APG_solver(beta_0,epsilon_0,eta,rho,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time);
                 break;
                 }
 				default: {
@@ -139,7 +139,7 @@
             	filename2="LAD_inner_"+filename+"tau_"+tau_str;
             	rho= 0.95;
                 eta= 0.95;
-            	l1l4.DLRCSGR3_solver(beta_0,epsilon_0,eta,rho,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time);
+            	l1l4.ALM_APPROX_solver(beta_0,epsilon_0,eta,rho,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time);
             	break;
                 }
             	case 'b': {
@@ -171,7 +171,7 @@
 				filename1="LAD_outer_"+filename+"tau_"+tau_str;
             	filename2="LAD_inner_"+filename+"tau_"+tau_str;
                 eta= 1.0/1.2;
-            	l1l3.DLRCSGR2_solver(beta_0,epsilon_0,1.0/eta,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time);
+            	l1l3.ALM_APG_solver(beta_0,epsilon_0,1.0/eta,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time);
             	break;
                 }
 				default: {
@@ -196,7 +196,7 @@
             	filename2="FL_inner_"+filename+"tau_"+tau_str;
             	rho= 0.95;
                 eta= 0.95;
-            	fl4.DLRCSGR3_solver(beta_0,epsilon_0,eta,rho,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time); 
+            	fl4.ALM_APPROX_solver(beta_0,epsilon_0,eta,rho,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time); 
             	break;
                 }
             	case 'b':  {
@@ -240,7 +240,7 @@
 				filename1="FL_outer_"+filename+"tau_"+tau_str;
             	filename2="FL_inner_"+filename+"tau_"+tau_str;
                 eta= 1.0/1.2;
-            	fl3.DLRCSGR2_solver(beta_0,epsilon_0,1.0/eta,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time); 
+            	fl3.ALM_APG_solver(beta_0,epsilon_0,1.0/eta,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time); 
             	break;
                 }
 				default: {
@@ -265,7 +265,7 @@
             	filename2="SVM_inner_"+filename+"tau_"+tau_str;
             	rho= 0.9;
                 eta= 0.95;
-            	svm3.DLRCSGR3_solver(beta_0,epsilon_0,eta,rho,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time); 
+            	svm3.ALM_APPROX_solver(beta_0,epsilon_0,eta,rho,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time); 
             	break;
                 }
             	case 'b': {
@@ -309,7 +309,7 @@
 				filename1="SVM_outer_"+filename+"tau_"+tau_str;
             	filename2="SVM_inner_"+filename+"tau_"+tau_str;
                 eta= 0.95;
-            	svm2.DLRCSGR2_solver(beta_0,epsilon_0,1.0/eta,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time); 
+            	svm2.ALM_APG_solver(beta_0,epsilon_0,1.0/eta,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time); 
             	break;
                 }
 				default: {
