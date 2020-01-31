@@ -1,5 +1,5 @@
-#ifndef SMSVM4_H
-#define SMSVM4_H
+#ifndef SMSVM_C_H
+#define SMSVM_C_H
 
 
 
@@ -27,7 +27,7 @@
 
 
 template<typename L, typename D>
-class SMSVM4: public PDCD_SMSVM<L, D>
+class SMSVM_c: public PDCD_SMSVM<L, D>
 {
 private:
 
@@ -46,7 +46,7 @@ protected:
 
 public:
 
-  SMSVM4(const char* Matrix_file,D val_lambda1, D val_lambda2)
+  SMSVM_c(const char* Matrix_file,D val_lambda1, D val_lambda2)
   :PDCD_SMSVM<L,D>(),my_M(Matrix_file)
   {
     lambda1=val_lambda1;
