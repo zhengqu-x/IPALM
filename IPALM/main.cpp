@@ -1,20 +1,20 @@
 //using namespace std;
 #include <iostream>
 #include <string>
-#include "Basis_pursuit3.h"
-#include "Basis_pursuit4.h"
-#include "Basis_pursuit6.h"
-#include "L_1_Lasso3.h"
-#include "L_1_Lasso4.h"
-#include "L_1_Lasso5.h"
-#include "Fused_Lasso.h"
-#include "Fused_lasso3.h"
-#include "Fused_lasso4.h"
-#include "Fused_lasso5.h"
-#include "SMSVM.h"
-#include "SMSVM2.h"
-#include "SMSVM3.h" 
-#include "SMSVM4.h"
+#include "Basis_pursuit_a.h"
+#include "Basis_pursuit_c.h"
+#include "Basis_pursuit_d.h"
+#include "L_1_Lasso_a.h"
+#include "L_1_Lasso_c.h"
+#include "L_1_Lasso_d.h"
+#include "Fused_Lasso_b.h"
+#include "Fused_lasso_a.h"
+#include "Fused_lasso_c.h"
+#include "Fused_lasso_d.h"
+#include "SMSVM_a.h"
+#include "SMSVM_b.h"
+#include "SMSVM_c.h" 
+#include "SMSVM_d.h"
 #include <gsl/gsl_rng.h>
 #include <gsl/gsl_randist.h>
 #include <stdio.h>
@@ -69,7 +69,7 @@
         	case 1: {
             switch(j){
             	case 'a':{
-			    Basis_pursuit4<long,double> bp4(filenameMatrix.c_str(),lambda1,lambda2);
+			    Basis_pursuit_a<long,double> bp4(filenameMatrix.c_str(),lambda1,lambda2);
                 n=bp4.get_n();
                 m=bp4.get_m(); 
                 x0.resize(n,0);
@@ -89,7 +89,7 @@
                 break;
                 }
                 case 'c':{
-			    Basis_pursuit6<long,double> bp6(filenameMatrix.c_str(),lambda1,lambda2);
+			    Basis_pursuit_c<long,double> bp6(filenameMatrix.c_str(),lambda1,lambda2);
                 n=bp6.get_n();
                 m=bp6.get_m(); 
                 x0.resize(n,0);
@@ -102,7 +102,7 @@
                 break;
                 }
                 case 'd':{
-			    Basis_pursuit3<long,double> bp3(filenameMatrix.c_str(),lambda1,lambda2);
+			    Basis_pursuit_d<long,double> bp3(filenameMatrix.c_str(),lambda1,lambda2);
                 n=bp3.get_n();
                 m=bp3.get_m(); 
                 x0.resize(n,0);
@@ -127,7 +127,7 @@
             case 2: {
             switch(j){
             	case 'a':{
-				L_1_Lasso4<long,double> l1l4(filenameMatrix.c_str(),lambda1,lambda2,lambda3);
+				L_1_Lasso_a<long,double> l1l4(filenameMatrix.c_str(),lambda1,lambda2,lambda3);
             	n=l1l4.get_n();
             	m=l1l4.get_m(); 
             	x0.resize(n,0);
@@ -147,7 +147,7 @@
 				break;
 			    }
 			    case 'c':{
-				L_1_Lasso5<long,double> l1l5(filenameMatrix.c_str(),lambda1,lambda2,lambda3);
+				L_1_Lasso_c<long,double> l1l5(filenameMatrix.c_str(),lambda1,lambda2,lambda3);
             	n=l1l5.get_n();
             	m=l1l5.get_m(); 
             	x0.resize(n,0);
@@ -160,7 +160,7 @@
             	break;
                 }
                 case 'd':{
-				L_1_Lasso3<long,double> l1l3(filenameMatrix.c_str(),lambda1,lambda2,lambda3);
+				L_1_Lasso_d<long,double> l1l3(filenameMatrix.c_str(),lambda1,lambda2,lambda3);
             	n=l1l3.get_n();
             	m=l1l3.get_m(); 
             	x0.resize(n,0);
@@ -184,7 +184,7 @@
             case 3: {
             switch(j){
             	case 'a':{
-                Fused_lasso4<long,double> fl4(filenameMatrix.c_str(),lambda1,lambda2,lambda3);
+                Fused_lasso_a<long,double> fl4(filenameMatrix.c_str(),lambda1,lambda2,lambda3);
             	n=fl4.get_n();
             	m=fl4.get_m(); 
             	x0.resize(n,0);
@@ -200,7 +200,7 @@
             	break;
                 }
             	case 'b':  {
-				Fused_lasso<long,double> fl(filenameMatrix.c_str(),lambda1,lambda2,lambda3);
+				Fused_lasso_b<long,double> fl(filenameMatrix.c_str(),lambda1,lambda2,lambda3);
             	n=fl.get_n();
             	m=fl.get_m(); 
             	x0.resize(n,0);
@@ -216,7 +216,7 @@
             	break;
                 }
                 case 'c':{
-                Fused_lasso5<long,double> fl5(filenameMatrix.c_str(),lambda1,lambda2,lambda3);
+                Fused_lasso_c<long,double> fl5(filenameMatrix.c_str(),lambda1,lambda2,lambda3);
             	n=fl5.get_n();
             	m=fl5.get_m(); 
             	x0.resize(n,0);
@@ -229,7 +229,7 @@
             	break;
                 }
                 case 'd':{
-                Fused_lasso3<long,double> fl3(filenameMatrix.c_str(),lambda1,lambda2,lambda3);
+                Fused_lasso_d<long,double> fl3(filenameMatrix.c_str(),lambda1,lambda2,lambda3);
             	n=fl3.get_n();
             	m=fl3.get_m(); 
             	x0.resize(n,0);
@@ -253,7 +253,7 @@
 			case 4: {
             switch(j){
             	case 'a': {
-			    SMSVM3<long,double> svm3(filenameMatrix.c_str(),lambda1,lambda2);
+			    SMSVM_a<long,double> svm3(filenameMatrix.c_str(),lambda1,lambda2);
             	n=svm3.get_n();
             	m=svm3.get_m(); 
             	x0.resize(n,0);
@@ -269,7 +269,7 @@
             	break;
                 }
             	case 'b': {
-				SMSVM<long,double> svm(filenameMatrix.c_str(),lambda1,lambda2);
+				SMSVM_b<long,double> svm(filenameMatrix.c_str(),lambda1,lambda2);
             	n=svm.get_n();
             	m=svm.get_m(); 
             	x0.resize(n,0);
@@ -285,7 +285,7 @@
             	break;
                 }
                 case 'c': {
-			    SMSVM4<long,double> svm4(filenameMatrix.c_str(),lambda1,lambda2);
+			    SMSVM_c<long,double> svm4(filenameMatrix.c_str(),lambda1,lambda2);
             	n=svm4.get_n();
             	m=svm4.get_m(); 
             	x0.resize(n,0);
@@ -298,7 +298,7 @@
             	break;
                 }
                 case 'd': {
-			    SMSVM2<long,double> svm2(filenameMatrix.c_str(),lambda1,lambda2);
+			    SMSVM_d<long,double> svm2(filenameMatrix.c_str(),lambda1,lambda2);
             	n=svm2.get_n();
             	m=svm2.get_m(); 
             	x0.resize(n,0);
