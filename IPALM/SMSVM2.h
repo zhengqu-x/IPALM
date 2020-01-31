@@ -16,7 +16,7 @@
 #include <ctime>
 #include <math.h>
 
-//This class solves problem: min_{x,omega} \sum_i max(1- b_i^T(A_ix+ omega), 0)+ P(x) by ASGARD
+//This class solves problem: min_{x,omega} \sum_i max(1- b_i^T(A_ix+ omega), 0)+ P(x) by ASGARD_DL
 // where P(x)=\frac{lambda2}{2}\|x\|_2^2 +lambda1\|x\|_1.
 
 // Let X= (x; omega), M= (b.*A b), b_i^T(A_ix+ omega)= M_iX
