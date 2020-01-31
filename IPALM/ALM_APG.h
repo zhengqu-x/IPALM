@@ -1,5 +1,5 @@
-#ifndef DLRCSGR2_H
-#define DLRCSGR2_H
+#ifndef ALM_APG_H
+#define ALM_APG_H
 
 
 
@@ -20,13 +20,14 @@
 // where f(x)=\sum_{j=1}^m lambda_f[j] \phi_j(<A_j,x>)
 //and g(x)=sum_{i=1}^n g_i(x_i). We all assume that each \phi_j is 1-smooth.
 
-// Each subproblem solves problem of the form f(x)+<Mx-c, lambda_s>+1/2beta_s\|Mx-c\|^2+g(x)+\beta_s/2\|x-x_s\|^2
+// Each subproblem solves problem of the form f(x)+ h_{\beta_s}(Mx; \lambda_s) +g(x) by APG;
+// This header file implements ASGARD.
 
 
 
 
 template<typename L, typename D>
-class DLRCSGR2: public APPROX2<L, D>
+class ALM_APG: public APPROX2<L, D>
 {
 private:
 
@@ -97,15 +98,15 @@ protected:
 
   D function_value;
 
-  L print_every_N_DLRCSGR2;
+  L print_every_N_ALM_APG;
 
-  D running_time_DLRCSGR2;
+  D running_time_ALM_APG;
 
   L nb_outer_iters;
 
   std::vector<D> gradient_of_f;
 
-  ofstream samp_DLRCSGR2;
+  ofstream samp_ALM_APG;
 public:
 
 
@@ -134,13 +135,13 @@ public:
   virtual inline D distance_to_subgradient_of_g(){return D(NULL);}
   //virtual inline D distance_to_subgradient_of_g(std::vector<D> &, std::vector<D> & ){return D(NULL);}
 
-  DLRCSGR2(const char* Matrix_file, D val_lambda_f)
+  ALM_APG(const char* Matrix_file, D val_lambda_f)
   :data_A(), data_M()
   {
 
   }
 
-  DLRCSGR2()
+  ALM_APG()
   :data_A(), data_M()
   {
 
@@ -714,27 +715,27 @@ public:
 
 
    inline void compute_and_record_res(){
-        if(nb_outer_iters%print_every_N_DLRCSGR2==0){
+        if(nb_outer_iters%print_every_N_ALM_APG==0){
           //compute_KKT_residual();
           compute_function_value();
-          cout<<setprecision(9)<<"Iteration: "<<nb_outer_iters<<"; time="<<running_time_DLRCSGR2<<"; function value="<<function_value<<endl;
-          samp_DLRCSGR2<<setprecision(9)<< nb_outer_iters<<" "<<running_time_DLRCSGR2<<" "<<function_value<<" "<<endl;
+          cout<<setprecision(9)<<"Iteration: "<<nb_outer_iters<<"; time="<<running_time_ALM_APG<<"; function value="<<function_value<<endl;
+          samp_ALM_APG<<setprecision(9)<< nb_outer_iters<<" "<<running_time_ALM_APG<<" "<<function_value<<" "<<endl;
         }
    }
 
  
 
 
-   void DLRCSGR2_solve_with_APPROX(D beta_0, D epsilon_0,  D omega, vector<D> & x0,vector<D> & y0, L val_tau, L max_nb_outer, L p_N_1, L p_N_2, D val_lambda_f,string filename1, string filename2, D time){
+   void ALM_APG_solve_with_APPROX(D beta_0, D epsilon_0,  D omega, vector<D> & x0,vector<D> & y0, L val_tau, L max_nb_outer, L p_N_1, L p_N_2, D val_lambda_f,string filename1, string filename2, D time){
       Initialize(beta_0, epsilon_0, omega,val_tau, x0, y0, val_lambda_f);
 
       nb_outer_iters=0;
       string sampname2="results/APPROXMU_"+filename2;
       this->samp.open(sampname2.c_str());
       filename1="results/DLRCSGR2_"+filename1;
-      samp_DLRCSGR2.open(filename1.c_str());
-      running_time_DLRCSGR2=0;
-      print_every_N_DLRCSGR2=p_N_1;
+      samp_ALM_APG.open(filename1.c_str());
+      running_time_ALM_APG=0;
+      print_every_N_ALM_APG=p_N_1;
       compute_and_record_res();
       D start;
       start = std::clock();
@@ -750,11 +751,11 @@ public:
 //      this->prox_grad_step();
       update_y();
       nb_outer_iters++;
-      running_time_DLRCSGR2+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
+      running_time_ALM_APG+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
       compute_and_record_res();
       start = std::clock();
       reset_everything();
-      running_time_DLRCSGR2+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
+      running_time_ALM_APG+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
       while(nb_outer_iters<max_nb_outer){
          start = std::clock();
          cout<<"ms="<<ceil(m_s/this->n*val_tau)<<"; beta_s="<<beta_s<<"; epsilon_s"<<epsilon_s<<endl;
@@ -769,13 +770,13 @@ public:
 //         this->prox_grad_step();
          update_y();
          nb_outer_iters++;
-         running_time_DLRCSGR2+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
+         running_time_ALM_APG+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
          testing();
          compute_and_record_res();
          start = std::clock();
          reset_everything();
-         running_time_DLRCSGR2+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
-         if (running_time_DLRCSGR2> time){
+         running_time_ALM_APG+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
+         if (running_time_ALM_APG> time){
          	break;
 		 }
       }
