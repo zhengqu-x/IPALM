@@ -1,5 +1,5 @@
-#ifndef L_1_LASSO3_H
-#define L_1_LASSO3_H
+#ifndef L_1_LASSO_D_H
+#define L_1_LASSO_D_H
 
 
 
@@ -27,7 +27,7 @@
 
 
 template<typename L, typename D>
-class L_1_Lasso3: public ALM_APG<L, D>
+class L_1_Lasso_d: public ALM_APG<L, D>
 {
 private:
 
@@ -48,7 +48,7 @@ protected:
 
 public:
 
-  L_1_Lasso3(const char* Matrix_file,D val_lambda1, D val_lambda2, D val_lambda3)
+  L_1_Lasso_d(const char* Matrix_file,D val_lambda1, D val_lambda2, D val_lambda3)
   :ALM_APG<L,D>(),my_M(Matrix_file)
   {
     lambda1=val_lambda1;
