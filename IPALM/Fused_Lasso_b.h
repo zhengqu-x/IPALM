@@ -1,5 +1,5 @@
-#ifndef FUSED_LASSO_H
-#define FUSED_LASSO_H
+#ifndef FUSED_LASSO_B_H
+#define FUSED_LASSO_B_H
 
 #include "ALM_Katyusha.h"
 #include <string>
@@ -23,7 +23,7 @@
 
 
 template<typename L, typename D>
-class Fused_lasso: public ALM_Katyusha<L, D>
+class Fused_lasso_b: public ALM_Katyusha<L, D>
 {
 private:
 
@@ -44,7 +44,7 @@ public:
 	D sig1;
 	D sig2;
 
-  Fused_lasso(const char* Matrix_file, D val_lambda1, D val_lambda2, D val_lambda3)
+  Fused_lasso_b(const char* Matrix_file, D val_lambda1, D val_lambda2, D val_lambda3)
   :ALM_Katyusha<L,D>(),my_A(Matrix_file)
   {
   	my_M.construct_fused_matrix(my_A);
