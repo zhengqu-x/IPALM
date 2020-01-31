@@ -13,7 +13,7 @@
 #include <ctime>
 #include <math.h>
 
-//This class solves problem: min_{x} \sum_i 0.5*(Ax- b)^2+ \sum_i \|x^i- x^{i+1}\|+ P(x) 
+//This class solves problem: min_{x} \sum_i 0.5*(Ax- b)^2+ \sum_i \|x^i- x^{i+1}\|+ P(x) by IPALM_Katyusha
 // where P(x)=\frac{sig2}{2}\|x\|_2^2 +sig1\|x\|_1.
 
 // f^i(x)= 0.5*(x- b_i)^2, h^i(x)= \|x\|, Mx= (x^1- x^2, ..., x_n- x_1) 
