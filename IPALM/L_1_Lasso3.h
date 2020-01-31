@@ -5,7 +5,7 @@
 
 #include "Matrix.h"
 #include "APPROX2.h"
-#include "DLRCSGR2.h"
+#include "ALM_APG.h"
 #include <string>
 #include <gsl/gsl_rng.h>
 #include <gsl/gsl_randist.h>
@@ -17,17 +17,17 @@
 #include <ctime>
 #include <math.h>
 
-//This class solves problem of the form f(x)+g(x)+ h(MX);
-// where f(x)= \sum_{j=1}^m lambda_f[j] \phi_j(<A_j,x>)
-//and g(x)=\frac{lambda2}{2}\|x\|_2+lambda1\|x\|_1.
-// h(x)= lambda3\|x\|_1.
+//This class solves problem of the form f(x)+g(x)+ h(Mx) by ASGARD;
+// where f(x)= 0
+//and g(x)=\frac{lambda2}{2}\|x\|_2+lambda1\|x\|_1,
+// h(x)= lambda3\|x- b\|_1.
 
 
 
 
 
 template<typename L, typename D>
-class L_1_Lasso3: public DLRCSGR2<L, D>
+class L_1_Lasso3: public ALM_APG<L, D>
 {
 private:
 
@@ -49,7 +49,7 @@ protected:
 public:
 
   L_1_Lasso3(const char* Matrix_file,D val_lambda1, D val_lambda2, D val_lambda3)
-  :DLRCSGR2<L,D>(),my_M(Matrix_file)
+  :ALM_APG<L,D>(),my_M(Matrix_file)
   {
     lambda1=val_lambda1;
     lambda2=val_lambda2;
@@ -172,8 +172,8 @@ public:
   
   
 
-  void DLRCSGR2_solver(D beta_0, D epsilon_0,  D omega, vector<D> & x0,vector<D> & y0,L val_tau, L max_nb_outer, L p_N_1, L p_N_2,string filename1, string filename2, D time){
-    this->DLRCSGR2_solve_with_APPROX(beta_0, epsilon_0, omega,x0,y0, val_tau, max_nb_outer,  p_N_1,  p_N_2,  val_lambda_f, filename1,  filename2, time);
+  void ALM_APG_solver(D beta_0, D epsilon_0,  D omega, vector<D> & x0,vector<D> & y0,L val_tau, L max_nb_outer, L p_N_1, L p_N_2,string filename1, string filename2, D time){
+    this->ALM_APG_solve_with_APPROX(beta_0, epsilon_0, omega,x0,y0, val_tau, max_nb_outer,  p_N_1,  p_N_2,  val_lambda_f, filename1,  filename2, time);
 }
 
 
