@@ -22,9 +22,9 @@
 /*
 The optimization problem to solve is:
 
-min \sum_i f^i(A_ix,b_i)+ \sum_i h^i(M_ix)+ P(x) 
+min \sum_i f^i(A_ix)+ \sum_i h^i(M_ix)+ P(x) 
 Assumption 1: For each i, f_i is 1-smooth, P(x) is seperable
-// Each subproblem solves problem of the form \sum_i f^i(A_ix,b_i)+ \sum_i h^i_{\beta_s}(M_ix;\lambda_s^i) +P(x)+ \beta_s/2\|x-x_s\|^2 by L_Katyuhsa
+// Each subproblem solves problem of the form \sum_i f^i(A_ix)+ \sum_i h^i_{\beta_s}(M_ix;\lambda_s^i) +P(x)+ \beta_s/2\|x-x_s\|^2 by L_Katyuhsa
 */
 
 template<typename L, typename D>
