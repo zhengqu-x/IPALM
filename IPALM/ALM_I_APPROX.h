@@ -1,5 +1,5 @@
-#ifndef ALM3_H
-#define ALM3_H
+#ifndef ALM_I_APPROX_H
+#define ALM_I_APPROX_H
 
 
 
@@ -20,13 +20,14 @@
 // where f(x)=\sum_{j=1}^m lambda_f[j] \phi_j(<A_j,x>)
 //and g(x)=sum_{i=1}^n g_i(x_i). We all assume that each \phi_j is 1-smooth.
 
-// Each subproblem solves problem of the form f(x)+<Mx-c, lambda_s>+1/2beta_s\|Mx-c\|^2+g(x)+\beta_s/2\|x-x_s\|^2
+// Each subproblem solves problem of the form f(x)+<Mx-c, lambda_s>+1/2beta_s\|Mx-c\|^2+g(x)+\beta_s/2\|x-x_s\|^2 by restart APPROX
+// This header file implements IPALM_APPROX.
 
 
 
 
 template<typename L, typename D>
-class ALM3: public APPROX2<L, D>
+class ALM_I_APPROX: public APPROX2<L, D>
 {
 private:
 
@@ -122,15 +123,15 @@ protected:
 
   D function_value;
 
-  L print_every_N_ALM3;
+  L print_every_N_ALM_I_APPROX;
 
-  D running_time_ALM3;
+  D running_time_ALM_I_APPROX;
 
   L nb_outer_iters;
 
   std::vector<D> gradient_of_f;
 
-  ofstream samp_ALM3;
+  ofstream samp_ALM_I_APPROX;
   
 public:
 
@@ -157,13 +158,13 @@ public:
   virtual inline D distance_to_subgradient_of_g(){return D(NULL);}
   //virtual inline D distance_to_subgradient_of_g(std::vector<D> &, std::vector<D> & ){return D(NULL);}
 
-  ALM3(const char* Matrix_file, D val_lambda_f)
+  ALM_I_APPROX(const char* Matrix_file, D val_lambda_f)
   :data_A(), data_M()
   {
 
   }
 
-  ALM3()
+  ALM_I_APPROX()
   :data_A(), data_M()
   {
 
@@ -837,27 +838,27 @@ public:
   }
 
    inline void compute_and_record_res(){
-        if(nb_outer_iters%print_every_N_ALM3==0){
+        if(nb_outer_iters%print_every_N_ALM_I_APPROX==0){
           compute_KKT_residual();
           compute_function_value();
-          cout<<setprecision(9)<<"Iteration: "<<nb_outer_iters<<"; time="<<running_time_ALM3<<"; residual1="<<residual1<<" residual2="<<residual2<<"; function value="<<function_value<<endl;
-          samp_ALM3<<setprecision(9)<<nb_outer_iters<<" "<<running_time_ALM3<<" "<<residual1<<" "<<residual2<<" "<<function_value<<" "<<endl;
+          cout<<setprecision(9)<<"Iteration: "<<nb_outer_iters<<"; time="<<running_time_ALM_I_APPROX<<"; residual1="<<residual1<<" residual2="<<residual2<<"; function value="<<function_value<<endl;
+          samp_ALM_I_APPROX<<setprecision(9)<<nb_outer_iters<<" "<<running_time_ALM_I_APPROX<<" "<<residual1<<" "<<residual2<<" "<<function_value<<" "<<endl;
         }
    }
 
  
 
 
-   void ALM3_solve_with_APPROX(D beta_0, D epsilon_0,  D eta, D rho,vector<D> & x0,vector<D> & y0, L val_tau, L max_nb_outer, L p_N_1, L p_N_2, D val_lambda_f,string filename1, string filename2, D time){
+   void ALM_I_APPROX_solve_with_APPROX(D beta_0, D epsilon_0,  D eta, D rho,vector<D> & x0,vector<D> & y0, L val_tau, L max_nb_outer, L p_N_1, L p_N_2, D val_lambda_f,string filename1, string filename2, D time){
       Initialize(beta_0, epsilon_0, eta, rho,val_tau, x0, y0, val_lambda_f);
 
       nb_outer_iters=0;
       string sampname2="results/APPROXMU_"+filename2;
       this->samp.open(sampname2.c_str());
       filename1="results/ALM3_"+filename1;
-      samp_ALM3.open(filename1.c_str());
-      running_time_ALM3=0;
-      print_every_N_ALM3=p_N_1;
+      samp_ALM_I_APPROX.open(filename1.c_str());
+      running_time_ALM_I_APPROX=0;
+      print_every_N_ALM_I_APPROX=p_N_1;
       compute_and_record_res();
       D start;
       start = std::clock();
@@ -889,11 +890,11 @@ public:
       momentum_update();
       update_m_s(val_tau);
       nb_outer_iters++;
-      running_time_ALM3+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
+      running_time_ALM_I_APPROX+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
       compute_and_record_res();
       start = std::clock();
       reset_everything();
-      running_time_ALM3+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
+      running_time_ALM_I_APPROX+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
       while(nb_outer_iters<max_nb_outer){
          start = std::clock();
          cout<<"ms="<<ceil(m_s/this->n*val_tau)<<"; beta_s="<<beta_s<<"; epsilon_s"<<epsilon_s<<endl;
@@ -921,13 +922,13 @@ public:
          momentum_update();
          update_m_s(val_tau);
          nb_outer_iters++;
-         running_time_ALM3+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
+         running_time_ALM_I_APPROX+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
          testing();
          compute_and_record_res();
          start = std::clock();
          reset_everything();
-         running_time_ALM3+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
-         if (running_time_ALM3> time){
+         running_time_ALM_I_APPROX+=( std::clock() - start ) / (double) CLOCKS_PER_SEC;
+         if (running_time_ALM_I_APPROX> time){
          	break;
 		 }
       }
