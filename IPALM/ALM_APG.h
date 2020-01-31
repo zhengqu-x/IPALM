@@ -21,7 +21,7 @@
 //and g(x)=sum_{i=1}^n g_i(x_i). We all assume that each \phi_j is 1-smooth.
 
 // Each subproblem solves problem of the form f(x)+ h_{\beta_s}(Mx; \lambda_s) +g(x) by APG;
-// This header file implements ASGARD.
+// This header file implements ASGARD_DL.
 
 
 
