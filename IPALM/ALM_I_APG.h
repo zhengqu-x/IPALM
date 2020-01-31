@@ -735,7 +735,7 @@ public:
  
 
 
-   void ALM2_solve_with_APPROX(D beta_0, D epsilon_0,  D eta, D rho,vector<D> & x0,vector<D> & y0, L val_tau, L max_nb_outer, L p_N_1, L p_N_2, D val_lambda_f,string filename1, string filename2, D time){
+   void ALM_I_APG_solve_with_APPROX(D beta_0, D epsilon_0,  D eta, D rho,vector<D> & x0,vector<D> & y0, L val_tau, L max_nb_outer, L p_N_1, L p_N_2, D val_lambda_f,string filename1, string filename2, D time){
       Initialize(beta_0, epsilon_0, eta, rho,val_tau, x0, y0, val_lambda_f);
 
       nb_outer_iters=0;
