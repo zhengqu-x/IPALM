@@ -1,5 +1,5 @@
-#ifndef BASIS_PURSUIT3_H
-#define BASIS_PURSUIT3_H
+#ifndef BASIS_PURSUIT_D_H
+#define BASIS_PURSUIT_D_H
 
 
 
@@ -26,7 +26,7 @@
 
 
 template<typename L, typename D>
-class Basis_pursuit3: public ALM_I_APG<L, D>
+class Basis_pursuit_d: public ALM_I_APG<L, D>
 {
 private:
 
@@ -45,7 +45,7 @@ protected:
 
 public:
 
-  Basis_pursuit3(const char* Matrix_file,D val_lambda1, D val_lambda2)
+  Basis_pursuit_d(const char* Matrix_file,D val_lambda1, D val_lambda2)
   :ALM_I_APG<L,D>(),my_M(Matrix_file)
   {
     lambda1=val_lambda1;
