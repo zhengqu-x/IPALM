@@ -17,7 +17,7 @@
 #include <ctime>
 #include <math.h>
 
-//This class solves problem of the form f(x)+g(x) under the constraint Mx=c by ASGARD;
+//This class solves problem of the form f(x)+g(x) under the constraint Mx=c by ASGARD_DL;
 // where f(x)=0
 //and g(x)=\frac{lambda2}{2}\|x\|_2+lambda1\|x\|_1.
 
