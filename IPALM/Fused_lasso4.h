@@ -5,7 +5,7 @@
 
 #include "Matrix.h"
 #include "APPROX2.h"
-#include "DLRCSGR3.h"
+#include "ALM_APPROX.h"
 #include <string>
 #include <gsl/gsl_rng.h>
 #include <gsl/gsl_randist.h>
@@ -17,17 +17,17 @@
 #include <ctime>
 #include <math.h>
 
-//This class solves problem: min_{x,omega} \sum_i 0.5*(Ax- b)^2+ \sum_i \|x^i- x^{i+1}\|+ g(x) 
-// where g(x)=\frac{lambda2}{2}\|x\|_2^2 +lambda1\|x\|_1.
-
-// phi_i(x)= 0.5*(x- b_i)^2, h_i(x)= \|x\|, Mx= (x^1- x^2, ..., x_n- x_1) 
+//This class solves problem: min_x f(x)+ g(x)+ h(Mx) by IPALM_APPROX;
+// where g(x)=\frac{lambda2}{2}\|x\|_2^2 +lambda1\|x\|_1;
+// f(x)= 1/2*\|Ax- b\|_2^2= \sum_i phi_i(A_ix);
+// phi_i(x)= 0.5*(x- b_i)^2, h_i(x)= \|x\|, Mx= (x^1- x^2, ..., x_n- x_1).
 
 
 
 
 
 template<typename L, typename D>
-class Fused_lasso4: public DLRCSGR3<L, D>
+class Fused_lasso4: public ALM_APPROX<L, D>
 {
 private:
 
@@ -51,7 +51,7 @@ protected:
 public:
 
   Fused_lasso4(const char* Matrix_file,const char* Matrix_file2, D val_lambda1, D val_lambda2, D val_lambda3)
-  :DLRCSGR3<L,D>(),my_A(Matrix_file), my_M(Matrix_file2)
+  :ALM_APPROX<L,D>(),my_A(Matrix_file), my_M(Matrix_file2)
   {
     lambda1=val_lambda1;
     lambda2=val_lambda2;
@@ -63,7 +63,7 @@ public:
   }
   
 Fused_lasso4(const char* Matrix_file,D val_lambda1, D val_lambda2, D val_lambda3)
-  :DLRCSGR3<L,D>(),my_A(Matrix_file)
+  :ALM_APPROX<L,D>(),my_A(Matrix_file)
   {
     lambda1=val_lambda1;
     lambda2=val_lambda2;
@@ -216,8 +216,8 @@ Fused_lasso4(const char* Matrix_file,D val_lambda1, D val_lambda2, D val_lambda3
   
   
 
-  void DLRCSGR3_solver(D beta_0, D epsilon_0,  D eta, D rho,vector<D> & x0,vector<D> & y0,L val_tau, L max_nb_outer, L p_N_1, L p_N_2,string filename1, string filename2, D time){
-    this->DLRCSGR3_solve_with_APPROX(beta_0, epsilon_0,  eta, rho,x0,y0, val_tau, max_nb_outer,  p_N_1,  p_N_2,  val_lambda_f, filename1,  filename2, time);
+  void ALM_APPROX_solver(D beta_0, D epsilon_0,  D eta, D rho,vector<D> & x0,vector<D> & y0,L val_tau, L max_nb_outer, L p_N_1, L p_N_2,string filename1, string filename2, D time){
+    this->ALM_APPROX_solve_with_APPROX(beta_0, epsilon_0,  eta, rho,x0,y0, val_tau, max_nb_outer,  p_N_1,  p_N_2,  val_lambda_f, filename1,  filename2, time);
 }
 
 
