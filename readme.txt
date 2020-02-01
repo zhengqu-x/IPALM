@@ -78,7 +78,7 @@ To reproduce Figure 1(a) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 2 a news20scale2 0.01 1 100000 1200 1 100 100 
+>> ./main 2 a news20scale2 0.01 1 100000 800 1 100 100 
 >> ./main 2 c news20scale2 0.01 1 100000 1200 1000 50 
 >> ./main 2 d news20scale2 0.01 1 100000 1200 10 
 
@@ -86,7 +86,8 @@ To reproduce Figure 1(a) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_news20scale2_lasso.m
+>>matlab 
+>>run plot_news20scale2_lasso
 
 
 
@@ -95,7 +96,7 @@ To reproduce Figure 1(b) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 2 a rcv1 0.01 1 100000 1200 1 100 100 
+>> ./main 2 a rcv1 0.01 1 100000 600 1 100 100 
 >> ./main 2 c rcv1 0.01 1 100000 1200 1000 50 
 >> ./main 2 d rcv1 0.01 1 100000 1200 10 
 
@@ -103,7 +104,8 @@ To reproduce Figure 1(b) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_rcv1_lasso.m
+>>matlab 
+>>run plot_rcv1_lasso
 
 
 
@@ -112,7 +114,7 @@ To reproduce Figure 1(c) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 2 a rcv1mc 0.01 1 100000 1200 1 100 100 
+>> ./main 2 a rcv1mc 0.01 1 100000 6 00 1 100 100 
 >> ./main 2 c rcv1mc 0.01 1 100000 1200 1000 50 
 >> ./main 2 d rcv1mc 0.01 1 100000 1200 10 
 
@@ -120,7 +122,8 @@ To reproduce Figure 1(c) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_rcv1mc_lasso.m
+>>matlab 
+>>run plot_rcv1mc_lasso
 
 
 
@@ -137,7 +140,8 @@ To reproduce Figure 1(d) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_news20binary_lasso.m
+>>matlab 
+>>run plot_news20binary_lasso
 
 
 
@@ -146,7 +150,7 @@ To reproduce Figure 2(a) and 3(a) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 1 a news20scale2 0.01 1 100000 1800 0.01 1 50 
+>> ./main 1 a news20scale2 0.01 1 100000 1000 0.01 1 50 
 >> ./main 1 c news20scale2 1 1 100000 1800 1 50 
 >> ./main 1 d news20scale2 1 1 100000 2400 1 
 
@@ -154,7 +158,8 @@ To reproduce Figure 2(a) and 3(a) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_news20scale2_bp.m
+>>matlab 
+>>run plot_news20scale2_bp
 
 
 
@@ -171,7 +176,8 @@ To reproduce Figure 2(b) and 3(b) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_rcv1_bp.m
+>>matlab 
+>>run plot_rcv1_bp
 
 
 
@@ -188,7 +194,8 @@ To reproduce Figure 2(c) and 3(c) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_rcv1mc_bp.m
+>>matlab 
+>>run plot_rcv1mc_bp
 
 
 
@@ -205,7 +212,8 @@ To reproduce Figure 2(d) and 3(d) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_news20binary_bp.m
+>>matlab 
+>>run plot_news20binary_bp
 
 
 
@@ -215,7 +223,7 @@ To reproduce Figure 4(a) in our paper, do:
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
 >> ./main 3 a news20scale2 0.01 0.01 100000 2400 1 100 100 
->> ./main 3 b news20scale2 0.01 0.01 100000 2400 1 1 40 
+>> ./main 3 b news20scale2 0.01 0.01 100000 600 1 1 40 
 >> ./main 3 c news20scale2 0.01 0.01 100000 2400 10 50 
 >> ./main 3 d news20scale2 0.01 0.01 100000 2400 10 
 
@@ -223,7 +231,8 @@ To reproduce Figure 4(a) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_news20scale2_fl.m
+>>matlab 
+>>run plot_news20scale2_fl
 
 
 
@@ -232,8 +241,8 @@ To reproduce Figure 4(b) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 3 a rcv1 0.01 0.01 100000 2400 1 100 100 
->> ./main 3 b rcv1 0.01 0.01 100000 2400 1 1 40 
+>> ./main 3 a rcv1 0.01 0.01 100000 600 1 100 100 
+>> ./main 3 b rcv1 0.01 0.01 100000 600 1 1 40 
 >> ./main 3 c rcv1 0.01 0.01 100000 2400 10 50 
 >> ./main 3 d rcv1 0.01 0.01 100000 2400 10 
 
@@ -241,7 +250,8 @@ To reproduce Figure 4(b) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_rcv1_fl.m
+>>matlab 
+>>run plot_rcv1_fl
 
 
 
@@ -251,8 +261,8 @@ To reproduce Figure 4(c) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 3 a rcv1mc 0.01 0.01 100000 3600 1 100 100 
->> ./main 3 b rcv1mc 0.01 0.01 100000 3600 1 1 40 
+>> ./main 3 a rcv1mc 0.01 0.01 100000 1500 1 100 100 
+>> ./main 3 b rcv1mc 0.01 0.01 100000 600 1 1 40 
 >> ./main 3 c rcv1mc 0.01 0.01 100000 3600 10 50 
 >> ./main 3 d rcv1mc 0.01 0.01 100000 3600 10 
 
@@ -260,7 +270,8 @@ To reproduce Figure 4(c) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_rcv1mc_fl.m
+>>matlab 
+>>run plot_rcv1mc_fl
 
 
 
@@ -279,7 +290,8 @@ To reproduce Figure 4(d) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_news20binary_fl.m
+>>matlab 
+>>run plot_news20binary_fl
 
 
 
@@ -298,7 +310,8 @@ To reproduce Figure 5(a) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_w4a_svm.m
+>>matlab 
+>>run plot_w4a_svm
 
 
 
@@ -307,8 +320,8 @@ To reproduce Figure 5(b) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 4 a a7a 1 1 100000 1200 1 1000 100 
->> ./main 4 b a7a 1 1 100000 1200 1 100 20 
+>> ./main 4 a a7a 1 1 100000 400 1 1000 100 
+>> ./main 4 b a7a 1 1 100000 400 1 100 20 
 >> ./main 4 c a7a 1 1 100000 1200 100 100 
 >> ./main 4 d a7a 1 1 100000 1200 10
 
@@ -316,7 +329,8 @@ To reproduce Figure 5(b) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_a7a_svm.m
+>>matlab 
+>>run plot_a7a_svm
 
 
 
@@ -326,8 +340,8 @@ To reproduce Figure 5(c) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 4 a a8a 1 1 100000 1200 1 1000 100 
->> ./main 4 b a8a 1 1 100000 1200 1 100 20 
+>> ./main 4 a a8a 1 1 100000 400 1 1000 100 
+>> ./main 4 b a8a 1 1 100000 400 1 100 20 
 >> ./main 4 c a8a 1 1 100000 1200 100 100 
 >> ./main 4 d a8a 1 1 100000 1200 10
 
@@ -335,7 +349,8 @@ To reproduce Figure 5(c) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_a8a_svm.m
+>>matlab 
+>>run plot_a8a_svm
 
 
 
@@ -345,8 +360,8 @@ To reproduce Figure 5(d) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 4 a a9a 1 1 100000 1200 1 1000 100 
->> ./main 4 b a9a 1 1 100000 1200 1 100 20 
+>> ./main 4 a a9a 1 1 100000 400 1 1000 100 
+>> ./main 4 b a9a 1 1 100000 400 1 100 20 
 >> ./main 4 c a9a 1 1 100000 1200 100 100 
 >> ./main 4 d a9a 1 1 100000 1200 10
 
@@ -354,7 +369,8 @@ To reproduce Figure 5(d) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_a9a_svm.m
+>>matlab 
+>>run plot_a9a_svm
 
 
 
@@ -365,8 +381,8 @@ To reproduce Figure 5(e) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 4 a w6a 1 1 100000 1200 1 1000 100 
->> ./main 4 b w6a 1 1 100000 1200 1 100 20 
+>> ./main 4 a w6a 1 1 100000 400 1 1000 100 
+>> ./main 4 b w6a 1 1 100000 400 1 100 20 
 >> ./main 4 c w6a 1 1 100000 1200 100 100 
 >> ./main 4 d w6a 1 1 100000 1200 10
 
@@ -374,7 +390,8 @@ To reproduce Figure 5(e) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_w6a_svm.m
+>>matlab 
+>>run plot_w6a_svm
 
 
 
@@ -384,8 +401,8 @@ To reproduce Figure 5(f) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 4 a w7a 1 1 100000 1200 1 1000 100 
->> ./main 4 b w7a 1 1 100000 1200 1 100 20 
+>> ./main 4 a w7a 1 1 100000 400 1 1000 100 
+>> ./main 4 b w7a 1 1 100000 400 1 100 20 
 >> ./main 4 c w7a 1 1 100000 1200 100 100 
 >> ./main 4 d w7a 1 1 100000 1200 10
 
@@ -393,7 +410,8 @@ To reproduce Figure 5(f) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_w7a_svm.m
+>>matlab 
+>>run plot_w7a_svm
 
 
 
@@ -403,8 +421,8 @@ To reproduce Figure 5(g) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 4 a ijcnn1 1 1 100000 1200 1 1000 100 
->> ./main 4 b ijcnn1 1 1 100000 1200 1 100 20 
+>> ./main 4 a ijcnn1 1 1 100000 400 1 1000 100 
+>> ./main 4 b ijcnn1 1 1 100000 400 1 100 20 
 >> ./main 4 c ijcnn1 1 1 100000 1200 100 100 
 >> ./main 4 d ijcnn1 1 1 100000 1200 10
 
@@ -412,7 +430,8 @@ To reproduce Figure 5(g) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_ijcnn_svm.m
+>>matlab 
+>>run plot_ijcnn_svm
 
 
 
@@ -423,8 +442,8 @@ To reproduce Figure 5(h) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 4 a realsim 1 1 100000 3600 1 100 100 
->> ./main 4 b realsim 1 1 100000 3600 1 100 20 
+>> ./main 4 a realsim 1 1 100000 2000 1 100 100 
+>> ./main 4 b realsim 1 1 100000 2000 1 100 20 
 >> ./main 4 c realsim 1 1 100000 3600 1 100 
 >> ./main 4 d realsim 1 1 100000 3600 1
 
@@ -432,7 +451,8 @@ To reproduce Figure 5(h) in our paper, do:
 Then run
 >>cd ..
 >>cd MATLAB code
->>PUT_PATH_TO_ROOT_WHERE_MATLAB_IS/matlab -nosplash -nodisplay -nojvm -nodesktop < plot_realsim_svm.m
+>>matlab 
+>>run plot_realsim_svm
 
 
-All the plots are saved in .eps format in the folder Matlab code/my plots/
+All the plots are saved in .eps format in the folder Matlab code/myplots/
