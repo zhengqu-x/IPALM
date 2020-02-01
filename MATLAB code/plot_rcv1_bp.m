@@ -27,7 +27,7 @@ title('rcv1');
 %legend('ASGARD-fc','DLRCSGR-eps','DLRCSGR-m','SMART-CD','CVX');
 legend({'ASGARD-DL','IPALM-APPROX','SMART-CD'},'interpreter','latex','Fontsize',10);
 set(gcf,'Position',[10 10 350 400]);
-saveas(figure(1),[pwd '/my plots/bp_rcv1_obj.eps'],'epsc');
+saveas(figure(1),'myplots/bp_rcv1_obj.eps','epsc');
 figure(2);
 plot(ASGARD_fc_bp_rcv2(1:8:s1,2),log10(ASGARD_fc_bp_rcv2(1:8:s1,4)),'-->','LineWidth',2);
 hold on
@@ -45,4 +45,4 @@ title('rcv1');
 legend({'ASGARD-DL','IPALM-APPROX','SMART-CD'},'interpreter','latex','Fontsize',10);
 %legend({'ASGARD-fc','DLRCSGR-eps','DLRCSGR-m','CVX'},'interpreter','latex','Fontsize',10);
 set(gcf,'Position',[10 10 350 400]);
-saveas(figure(2),[pwd '/my plots/bp_rcv1_infeas.eps'],'epsc');
+saveas(figure(2),'myplots/bp_rcv1_infeas.eps','epsc');
