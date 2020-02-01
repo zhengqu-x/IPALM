@@ -85,7 +85,7 @@ To reproduce Figure 1(a) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab 
 >>run plot_news20scale2_lasso
 
@@ -103,7 +103,7 @@ To reproduce Figure 1(b) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab 
 >>run plot_rcv1_lasso
 
@@ -121,7 +121,7 @@ To reproduce Figure 1(c) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab 
 >>run plot_rcv1mc_lasso
 
@@ -139,7 +139,7 @@ To reproduce Figure 1(d) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab 
 >>run plot_news20binary_lasso
 
@@ -157,7 +157,7 @@ To reproduce Figure 2(a) and 3(a) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab 
 >>run plot_news20scale2_bp
 
@@ -175,7 +175,7 @@ To reproduce Figure 2(b) and 3(b) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab 
 >>run plot_rcv1_bp
 
@@ -193,7 +193,7 @@ To reproduce Figure 2(c) and 3(c) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab 
 >>run plot_rcv1mc_bp
 
@@ -211,7 +211,7 @@ To reproduce Figure 2(d) and 3(d) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab 
 >>run plot_news20binary_bp
 
@@ -230,7 +230,7 @@ To reproduce Figure 4(a) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab 
 >>run plot_news20scale2_fl
 
@@ -249,7 +249,7 @@ To reproduce Figure 4(b) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab 
 >>run plot_rcv1_fl
 
@@ -269,7 +269,7 @@ To reproduce Figure 4(c) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab 
 >>run plot_rcv1mc_fl
 
@@ -289,7 +289,7 @@ To reproduce Figure 4(d) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab 
 >>run plot_news20binary_fl
 
@@ -309,7 +309,7 @@ To reproduce Figure 5(a) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab 
 >>run plot_w4a_svm
 
@@ -328,7 +328,7 @@ To reproduce Figure 5(b) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab 
 >>run plot_a7a_svm
 
@@ -348,7 +348,7 @@ To reproduce Figure 5(c) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab 
 >>run plot_a8a_svm
 
@@ -368,7 +368,7 @@ To reproduce Figure 5(d) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab 
 >>run plot_a9a_svm
 
@@ -389,7 +389,7 @@ To reproduce Figure 5(e) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab 
 >>run plot_w6a_svm
 
@@ -409,7 +409,7 @@ To reproduce Figure 5(f) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab 
 >>run plot_w7a_svm
 
@@ -429,7 +429,7 @@ To reproduce Figure 5(g) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab 
 >>run plot_ijcnn_svm
 
@@ -447,7 +447,7 @@ To reproduce Figure 5(h) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab 
 >>run plot_realsim_svm
 
@@ -465,7 +465,7 @@ To reproduce Figure 5(i) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab
 >>run plot_w8a_svm
 
@@ -483,7 +483,7 @@ To reproduce Figure 5(j) in our paper, do:
 
 Then run
 >>cd ..
->>cd MATLAB code
+>>cd MATLAB_code
 >>matlab 
 >>run plot_covtype_svm
 
