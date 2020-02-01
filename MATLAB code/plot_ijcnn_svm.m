@@ -27,4 +27,4 @@ title('ijcnn1');
 legend('ASGARD-DL','IPALM-APPROX','SMART-CD','IPALM-KATYUSHA');
 %legend('ASGARD-DL','IPALM-APPROX','SMART-CD');
 set(gcf,'Position',[10 10 400 400]);
-saveas(gcf,[pwd '/my plots/svm_ijcnn1.eps'],'epsc');
+saveas(gcf,'myplots/svm_ijcnn1.eps','epsc');
