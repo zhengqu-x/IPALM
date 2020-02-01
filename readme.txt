@@ -434,9 +434,6 @@ Then run
 >>run plot_ijcnn_svm
 
 
-
-
-
 To reproduce Figure 5(h) in our paper, do:
 
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
@@ -453,6 +450,42 @@ Then run
 >>cd MATLAB code
 >>matlab 
 >>run plot_realsim_svm
+
+
+To reproduce Figure 5(i) in our paper, do:
+
+>> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
+>> cd IPALM
+>> g++ -o main main.cpp -lgsl -lgslcblas
+>> main 4 a w8a 1 1 100000 6000 1 1000 100 
+>> main 4 b w8a 1 1 100000 6000 1 100 20 
+>> main 4 c w8a 1 1 100000 6000 100 100 
+>> main 4 d w8a 1 1 100000 6000 1
+
+
+Then run
+>>cd ..
+>>cd MATLAB code
+>>matlab
+>>run plot_w8a_svm
+
+
+To reproduce Figure 5(j) in our paper, do:
+
+>> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
+>> cd IPALM
+>> g++ -o main main.cpp -lgsl -lgslcblas
+>> main 4 a covtype 1 1 100000 1200 1 1000 100 
+>> main 4 b covtype 1 1 100000 1200 1 100 20 
+>> main 4 c covtype 1 1 100000 1200 1 100 
+>> main 4 d covtype 1 1 100000 1200 10
+
+
+Then run
+>>cd ..
+>>cd MATLAB code
+>>matlab 
+>>run plot_covtype_svm
 
 
 All the plots are saved in .eps format in the folder Matlab code/myplots/
