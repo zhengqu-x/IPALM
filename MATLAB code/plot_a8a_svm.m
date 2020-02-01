@@ -27,4 +27,4 @@ title('a8a');
 legend('ASGARD-DL','IPALM-APPROX','SMART-CD','IPALM-KATYUSHA');
 %legend('ASGARD-DL','IPALM-APPROX','SMART-CD');
 set(gcf,'Position',[10 10 400 400]);
-saveas(gcf,[pwd '/my plots/svm_a8a.eps'],'epsc');
+saveas(gcf,'myplots/svm_a8a.eps','epsc');
