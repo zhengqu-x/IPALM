@@ -27,4 +27,4 @@ title('covtype');
 legend('ASGARD-DL','IPALM-APPROX','SMART-CD','IPALM-KATYUSHA');
 %legend('ASGARD-DL','IPALM-APPROX','SMART-CD');
 set(gcf,'Position',[10 10 400 400]);
-saveas(gcf,[pwd '/my plots/svm_covtype.eps']);
+saveas(gcf,'myplots/svm_covtype.eps','epsc');
