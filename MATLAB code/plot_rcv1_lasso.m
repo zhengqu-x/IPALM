@@ -22,4 +22,4 @@ ylabel('log|F(x)- F^*|/F^*');
 title('rcv1');
 legend({'ASGARD-DL','IPALM-APPROX','SMART-CD'},'interpreter','latex','Fontsize',10);
 set(gcf,'Position',[10 10 400 400]);
-saveas(gcf,[pwd '/my plots/lasso_rcv1.eps'],'epsc');
+saveas(gcf,'myplots/lasso_rcv1.eps','epsc');
