@@ -114,7 +114,7 @@ To reproduce Figure 1(c) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 2 a rcv1mc 0.01 1 100000 6 00 1 100 100 
+>> ./main 2 a rcv1mc 0.01 1 100000 600 1 100 100 
 >> ./main 2 c rcv1mc 0.01 1 100000 1200 1000 50 
 >> ./main 2 d rcv1mc 0.01 1 100000 1200 10 
 
