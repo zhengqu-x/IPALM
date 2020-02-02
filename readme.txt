@@ -57,6 +57,8 @@ For example, to solve the least absolute deviation problem with lambda1=0.01, la
 
 >>./main 2 a news20scale2 0.01 1 100000 100 1 100 100 
 
+Notice if using IPALM, the value epsilon_0 cannot be 0.
+
 If instead you want to solve the problem with SMART_CD, and beta_0= 1000, p_N_2= 50, do:
 
 >>./main 2 c news20scale2 0.01 1 100000 100 1000 50  
