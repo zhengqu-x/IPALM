@@ -24,7 +24,7 @@ ylim([-4.5 4]);
 xlim([0 1500]);
 xlabel('time');
 ylabel('log|F(x)- F^*|/F^*');
-title('rcv1mcmc');
+title('rcv1mc');
 %legend('ASGARD-fc','DLRCSGR-eps','DLRCSGR-m','SMART-CD');
 legend('ASGARD-DL','IPALM-APPROX','SMART-CD','IPALM-KATYUSHA');
 set(gcf,'Position',[10 10 400 400]);
