@@ -4,17 +4,22 @@
 #include "Basis_pursuit_a.h"
 #include "Basis_pursuit_c.h"
 #include "Basis_pursuit_d.h"
+#include "Basis_pursuit_e.h"
 #include "L_1_Lasso_a.h"
 #include "L_1_Lasso_c.h"
 #include "L_1_Lasso_d.h"
+#include "L_1_Lasso_e.h"
 #include "Fused_Lasso_b.h"
 #include "Fused_lasso_a.h"
 #include "Fused_lasso_c.h"
 #include "Fused_lasso_d.h"
+#include "Fused_lasso_e.h"
 #include "SMSVM_a.h"
 #include "SMSVM_b.h"
 #include "SMSVM_c.h" 
 #include "SMSVM_d.h"
+#include "SMSVM_e.h"
+#include "QCQP_b.h"
 #include <gsl/gsl_rng.h>
 #include <gsl/gsl_randist.h>
 #include <stdio.h>
@@ -38,16 +43,18 @@
         long m;
         long p_N_1= 1;
         long p_N_2= 100;
-		std::vector<double> x0;
+	std::vector<double> x0;
         //for (int j = 0; j < n; j++)  {readx0_ >>x0[j]; }
         std::vector<double> y0;
         double beta_0= 1;
         double epsilon_0= 0;
         double eta;
         double rho;
-		long val_tau=1;
+	long val_tau=1;
         stringstream  tau_convert;
         string tau_str;
+	stringstream  beta_convert;
+        string beta_str;
      	string filename, filename1, filename2, filenameMatrix, filenameMatrix_M;
      	filename= argv[3];
      	filenameMatrix="../datas/matrix_"+filename;
@@ -117,6 +124,20 @@
                 bp3.ALM_I_APG_solver(beta_0,epsilon_0,eta,rho,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time);
                 break;
                 }
+	        case 'e':{
+                	Basis_pursuit_e<long, double> ladmm(filenameMatrix.c_str(), lambda1, lambda2);
+        			n=ladmm.get_n();
+        			m=ladmm.get_m(); 
+        			x0.resize(n,0);
+        			y0.resize(m,0);
+        			lambda0.resize(m,0);
+        			rho= 1;
+				beta_convert<< floor(log10(1.0/beta_0));
+                                     beta_str= beta_convert.str();
+        			filename1="BP_"+filename+"_beta_"+beta_str;
+        			ladmm.LADMM_solver(beta_0,rho,x0,y0, lambda0,max_nb_outer,p_N_2,filename1,time);  
+					break;
+				}
 				default: {
                 cout<< "no inner solver input"<< endl;	
                 break;
@@ -174,6 +195,20 @@
             	l1l3.ALM_APG_solver(beta_0,epsilon_0,1.0/eta,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time);
             	break;
                 }
+	        case 'e':{
+                	L_1_Lasso_e<long, double> ladmm(filenameMatrix.c_str(), lambda1, lambda2, lambda3);
+        			n=ladmm.get_n();
+        			m=ladmm.get_m(); 
+        			x0.resize(n,0);
+        			y0.resize(m,0);
+        			lambda0.resize(m,0);
+        			rho= 1;
+				beta_convert<< floor(log10(1.0/beta_0));
+                                     beta_str= beta_convert.str();
+        			filename1="LAD_"+filename+"_beta_"+beta_str;
+        			ladmm.LADMM_solver(beta_0,rho,x0,y0, lambda0,max_nb_outer,p_N_2,filename1,time);  
+					break;
+				}
 				default: {
 					cout<< "no inner solver input"<< endl;
 					break;
@@ -243,6 +278,20 @@
             	fl3.ALM_APG_solver(beta_0,epsilon_0,1.0/eta,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time); 
             	break;
                 }
+	        case 'e' :{
+		Fused_lasso_e<long,double> ladmm(filenameMatrix.c_str(),lambda1, lambda2, lambda3);
+		 n=ladmm.get_n();
+       		 m=ladmm.get_m(); 
+        		x0.resize(n,0);
+        		y0.resize(m,0);
+        		lambda0.resize(m,0);
+        		rho= 1;
+        		beta_convert<< floor(log10(1.0/beta_0));
+        			string beta_str= beta_convert.str();
+        		filename1="FL_"+filename+"_beta_"+beta_str;
+       		 ladmm.LADMM_solver(beta_0,rho,x0,y0, lambda0,max_nb_outer,p_N_2,filename1,time);  
+		break;
+		}
 				default: {
 					cout<< "no inner solver input"<< endl;
 					break;
@@ -312,6 +361,20 @@
             	svm2.ALM_APG_solver(beta_0,epsilon_0,1.0/eta,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time); 
             	break;
                 }
+	        case 'e':{
+			SMSVM_e<long, double> ladmm(filenameMatrix.c_str(), lambda1, lambda2);
+       			 n=ladmm.get_n();
+       			 m=ladmm.get_m(); 
+        			x0.resize(n,0);
+       			 y0.resize(m,0);
+       			 lambda0.resize(m,0);
+        			rho= 1;
+        			beta_convert<< floor(log10(1.0/beta_0));
+        			string beta_str= beta_convert.str();
+    			filename1="SVM_"+filename+"_beta_"+beta_str;
+        			ladmm.LADMM_solver(beta_0,rho,x0,y0, lambda0,max_nb_outer,p_N_2,filename1,time);
+			break;
+		}
 				default: {
 					cout<< "no inner solver input"<< endl;
 					break;
@@ -319,6 +382,22 @@
 			}
             break;
             }
+		case 5:{
+			QCQP_b<long,double> qcqp(filenameMatrix.c_str(),1);
+  			n=qcqp.get_n();
+  			m=qcqp.get_m();
+  			x0.resize(n,0);
+  			y0.resize(m,0);
+  			for (int j = 0; j < n; j++)  {x0[j]= 0; }
+  			val_tau= floor(sqrt(m+ 1));;
+  			tau_convert<<val_tau;
+  			tau_str=tau_convert.str();
+  			filename1="QCQP_outer_"+filename+"_tau_"+tau_str;
+  			filename2="QCQP_inner_"+filename+"_tau_"+tau_str;
+  			rho= 0.9;
+  			eta= 0.95;
+  			qcqp.ALM_QCQP_solver(beta_0,epsilon_0,eta,rho,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time);
+		}
             default:{
             	cout<< "No such type of problem"<< endl;
 				break;
