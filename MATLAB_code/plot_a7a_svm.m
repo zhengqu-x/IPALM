@@ -9,10 +9,13 @@ s1= size(ASGARD_fc_svm_a7am,1);
 s2= size(DLRCSGR_eps_svm_a7am,1);
 s3= size(SMART_CD_svm_a7am,1);
 s4= size(KATYUSHA_svm_a7am,1);
+s5= size(ADMM_svm_a7am,1);
 plot(ASGARD_fc_svm_a7am(1:5:s1,2),log10((abs(ASGARD_fc_svm_a7am(1:5:s1,3)- f_opt)/f_opt)),'-->','LineWidth',2);
 hold on
 plot(DLRCSGR_eps_svm_a7am(1:20:s2,2),log10((abs(DLRCSGR_eps_svm_a7am(1:20:s2,3)- f_opt)/f_opt)),'--s','LineWidth',2);
-%hold on
+hold on
+plot(ADMM_svm_a7am(1:30:s5,2),log10(abs(ADMM_svm_a7am(1:30:s5,3)- f_opt)/f_opt),'--+','LineWidth',2);
+hold on
 plot(SMART_CD_svm_a7am(1:30:s3,2),log10((abs(SMART_CD_svm_a7am(1:30:s3,5)- f_opt)/f_opt)),'--x','LineWidth',2);
 %plot(DLRCSGR_m_svm_a7am(1:2:52,2),log10((abs(DLRCSGR_m_svm_a7am(1:2:52,3)- f_opt)/f_opt)),'--o','LineWidth',2);
 %hold on
