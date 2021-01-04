@@ -7,7 +7,7 @@ ADMM_bp_rcv2= importdata('../IPALM/results/ADMM_BP_rcv2_beta_1',' ');
 s1= size(ASGARD_fc_bp_rcv2,1);
 s2= size(DLRCSGR_eps_bp_rcv2,1);
 s3= size(SMART_CD_bp_rcv2,1);
-s4= size(ADMM_bp_rcv2);
+s4= size(ADMM_bp_rcv2,1);
 figure(1);
 plot(ASGARD_fc_bp_rcv2(1:8:s1,2),log10(abs(ASGARD_fc_bp_rcv2(1:8:s1,5)- f_ub)/f_ub),'-->','LineWidth',2);
 hold on
