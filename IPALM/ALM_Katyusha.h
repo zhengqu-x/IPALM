@@ -84,6 +84,7 @@ protected:
 
   ofstream samp_ALM;
 
+  ofstream samp_x_ALM;
 
 public:
 
@@ -387,8 +388,10 @@ void ALM_solve_with_L_Katyusha(D beta_0, D epsilon_0,  D eta, D rho,vector<D> & 
   //string sampname2= ALGparam.data_dir +"/results/L_Katyusha_"+filename2;
   string sampname2= "results/L_Katyusha_"+filename2;
   this->samp.open(sampname2.c_str());
+  string sampname_x="results/L_Katyusha_x_"+filename1;
   //filename1= ALGparam.data_dir +"/results/ALM_"+filename1;
   filename1= "results/ALM_"+filename1;
+  samp_x_ALM.open(sampname_x.c_str());
   samp_ALM.open(filename1.c_str());
   running_time_ALM=0;
   print_every_N_ALM=p_N_1;
@@ -448,7 +451,9 @@ void ALM_solve_with_L_Katyusha(D beta_0, D epsilon_0,  D eta, D rho,vector<D> & 
       break;
     }
   }
-
+  for (L i= 0; i< m_1; i++){
+      	samp_x_ALM<< x_s[i]<< endl;
+  }
 }
 };
 
