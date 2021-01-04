@@ -397,6 +397,7 @@
   			rho= 0.9;
   			eta= 0.95;
   			qcqp.ALM_QCQP_solver(beta_0,epsilon_0,eta,rho,x0,y0,val_tau,max_nb_outer,p_N_1,p_N_2,filename1,filename2,time);
+			break;
 		}
             default:{
             	cout<< "No such type of problem"<< endl;
