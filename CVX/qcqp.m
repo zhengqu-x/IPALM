@@ -1,3 +1,4 @@
+A = importdata('qcqp1_A.mat'); b = importdata('qcqp1_b.mat');
 m = size(A,1)/size(A,2)-1 ;
 n = size(A,2); 
 e= ones(n,1);
