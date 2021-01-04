@@ -4,6 +4,7 @@ ASGARD_fc_svm_a7am= importdata('../IPALM/results/DLRCSGR2_SVM_outer_a7atau_123',
 DLRCSGR_eps_svm_a7am= importdata('../IPALM/results/DLRCSGR3_SVM_outer_a7atau_1',' ');
 SMART_CD_svm_a7am= importdata('../IPALM/results/PDCD_SMSVM_SVM_outer_a7atau_1',' ');
 KATYUSHA_svm_a7am= importdata('../IPALM/results/ALM_SVM_outer_a7atau_126',' ');
+ADMM_svm_a7am= importdata('../IPALM/results/ADMM_SVM_a7a_beta_1',' ');
 s1= size(ASGARD_fc_svm_a7am,1);
 s2= size(DLRCSGR_eps_svm_a7am,1);
 s3= size(SMART_CD_svm_a7am,1);
