@@ -595,4 +595,4 @@ To reproduce Table 9 in our paper, do:
 >> g++ -o main main.cpp -lgsl -lgslcblas
 >> ./main 5 b qcqp1 1 1 200 10 1 100 50 ; ./main 5 b qcqp2 1 1 100000 160 10 3 50 ; ./main 5 b qcqp3 1 1 100000 4000 1 800 50 ; ./main 5 b qcqp4 1 1 100000 12000 1 1000 50
 
-This should take roughly 10+160+4000+12000=16170 seconds. The results are saved in the folder results/. 
+This should take roughly 10+160+4000+12000=16170 seconds. The results are saved in the folder results/. In the output file, the second column is the running time; the third column is the objective value; and the forth column is the infeasibility which is dist((0.5*x^TQ_jx+ b_jx- 1)_{j= 1,...,m}, R^m_{-}).
