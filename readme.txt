@@ -151,7 +151,7 @@ To reproduce Figure 1(c) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 2 a rcv1mc 0.01 1 100000 600 1 100 100 ; ./main 2 c rcv1mc 0.01 1 100000 1200 1000 50 ; ./main 2 d rcv1mc 0.01 1 100000 1200 10 ; ./main 2 3 rcv1mc 0.01 1 1000000 1200 0.1 100
+>> ./main 2 a rcv1mc 0.01 1 100000 600 1 100 100 ; ./main 2 c rcv1mc 0.01 1 100000 1200 1000 50 ; ./main 2 d rcv1mc 0.01 1 100000 1200 10 ; ./main 2 e rcv1mc 0.01 1 1000000 1200 0.1 100
 
 
 This should take roughly 600+1200+1200+1200=4200 seconds. The results are saved in the folder results/. 
@@ -173,7 +173,7 @@ To reproduce Figure 1(d) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 2 a news20binary 0.01 1 100000 3600 0.1 100 50 ; ./main 2 c news20binary 0.01 1 100000 3600 10 10 ; ./main 2 d news20binary 0.01 1 100000 3600 0.1 ; ./main 2 c news20binary 0.01 1 1000000 3600 0.1 100
+>> ./main 2 a news20binary 0.01 1 100000 3600 0.1 100 50 ; ./main 2 c news20binary 0.01 1 100000 3600 10 10 ; ./main 2 d news20binary 0.01 1 100000 3600 0.1 ; ./main 2 e news20binary 0.01 1 1000000 3600 0.1 100
 
 
 This should take roughly 3600+3600+3600+3600=144000 seconds. The results are saved in the folder results/. 
@@ -239,7 +239,7 @@ To reproduce Figure 2(c) and 3(c) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 1 a rcv1mc 0.01 1 100000 3600 0.01 1 50 ; ./main 1 c rcv1mc 0.01 1 100000 3600 1 50 ; ./main 1 d rcv1mc 0.01 1 100000 4200 1 ; ./main 1 3 rcv1mc 0.01 1 100000 3600 0.1 100
+>> ./main 1 a rcv1mc 0.01 1 100000 3600 0.01 1 50 ; ./main 1 c rcv1mc 0.01 1 100000 3600 1 50 ; ./main 1 d rcv1mc 0.01 1 100000 4200 1 ; ./main 1 e rcv1mc 0.01 1 100000 3600 0.1 100
 
 
 This should take roughly 3600+3600+4200+3600=15000 seconds. The results are saved in the folder results/. 
@@ -261,7 +261,7 @@ To reproduce Figure 2(d) and 3(d) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 1 a news20binary_bp 0.01 1 100000 2400 0.01 1 50 ; ./main 1 c news20binary_bp 0.01 1 100000 2400 0.1 10 ; ./main 1 d news20binary_bp 0.01 1 100000 2400 0.1 ; ./main 1 c news20binary_bp 0.01 1 100000 2400 0.01 100
+>> ./main 1 a news20binary_bp 0.01 1 100000 2400 0.01 1 50 ; ./main 1 c news20binary_bp 0.01 1 100000 2400 0.1 10 ; ./main 1 d news20binary_bp 0.01 1 100000 2400 0.1 ; ./main 1 e news20binary_bp 0.01 1 100000 2400 0.01 100
 
 
 This should take roughly 2400+2400+2400+2400=9600 seconds. The results are saved in the folder results/. 
@@ -439,7 +439,7 @@ To reproduce Figure 5(d) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 4 a a9a 1 1 100000 400 1 1000 100 ; ./main 4 b a9a 1 1 100000 400 1 100 20 ; ./main 4 c a9a 1 1 100000 1200 100 100 ; ./main 4 d a9a 1 1 100000 1200 10 ; ./main 4 e a9a 1 1 100000 1200 0.01 100
+>> ./main 4 a a9a 1 1 100000 400 1 1000 100 ; ./main 4 b a9a 1 1 100000 400 1 100 20 ; ./main 4 c a9a 1 1 100000 1200 100 100 ; ./main 4 d a9a 1 1 100000 1200 10 ; ./main 4 e a9a 1 1 1000000 1200 0.01 100
 
 
 This should take roughly 400+400+1200+1200+1200=4400 seconds. The results are saved in the folder results/. 
