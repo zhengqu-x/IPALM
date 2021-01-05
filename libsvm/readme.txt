@@ -3,7 +3,10 @@ Instruction for LIBSVM
 This folder contains the code and data used to solve support vector machine problems by LIBSVM. Readers need download and install LIBSVM package (https://www.csie.ntu.edu.tw/~cjlin/libsvm/#download).
 
 To generate Table 7 in our paper, 
-First, 
+First, do
+>> cd ..
+>> cd IPALM
+>> ./main 4 b a7a 1 1 100000 9 1 100 20; ./main 4 b a8a 1 1 100000 19 1 100 20; ./main 4 b a9a 1 1 100000 41 1 100 20; ./main 4 b w6a 1 1 100000 2 1 100 20; ./main 4 b w7a 1 1 100000 3 1 100 20; ./main 4 b ijcnn1 1 1 100000 31 1 100 20; ./main 4 b w8a 1 1 100000 13 1 100 20
 copy the output x from the folder "../IPALM/results/" to current folder:
 L_Katyusha_x_SVM_outer_a7atau_126;
 L_Katyusha_x_SVM_outer_a8atau_150;
@@ -16,3 +19,5 @@ L_Katyusha_x_SVM_outer_w8atau_223.
 Second, 
 Run svm_compare.m
 For different datasets, just change the dataset name to define [b, A], [b2, A2] in the 1st and 2nd line, and x in the 18th line.
+
+In the output variables, "acc" is the accuracy of LIBSVM and "accuracy" is the accuracy of IPALM_Katyuhsa.
