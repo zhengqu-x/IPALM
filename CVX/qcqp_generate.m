@@ -1,5 +1,5 @@
 n= 1000;
-% the number of the constraints
+% the number of the constraints, for qcqp3, m= 100; for qcqp4, m= 500.
 m= 500;
 A= sparse(n*(m+ 1),n);
 b= zeros(n*(m+ 1),1);
@@ -10,7 +10,11 @@ for i= 1:m+1
     A((i- 1)*n+1:i*n,:)= R;
     b((i- 1)*n+1:i*n,:)= c;
 end
-% If m is too large, matlab cannot save the matrix A. We need seperate the
+
+% For m= 100, we can directly save.
+% save qcqp3_A.mat A;
+% save qcqp3_b.mat b;
+% For m= 500, matlab cannot save the matrix A. We need seperate the
 % matrix A into 5 parts.
 A1= sparse(n*m/5,n);
 A1= A(1:n*(m/5),:);
@@ -28,6 +32,6 @@ save qcqp4_A3.mat A3;
 save qcqp4_A4.mat A4;
 save qcqp4_A5.mat A5;
 save qcqp4_b.mat b;
-% For small m, we can directlt save.
-% save qcqp3_A.mat A;
-% save qcqp3_b.mat b;
+
+% To store in libsvm format for later use of IPALM_Katyusha, we need use libsvmwrite.m in LIBSVM package
+libsvmwrite('matrix_qcqp4',b,A);
