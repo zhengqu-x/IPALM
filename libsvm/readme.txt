@@ -6,7 +6,7 @@ To generate Table 7 in our paper,
 First, do
 >> cd ..
 >> cd IPALM
->> ./main 4 b a7a 1 1 100000 9 1 100 20; ./main 4 b a8a 1 1 100000 19 1 100 20; ./main 4 b a9a 1 1 100000 41 1 100 20; ./main 4 b w6a 1 1 100000 2 1 100 20; ./main 4 b w7a 1 1 100000 3 1 100 20; ./main 4 b ijcnn1 1 1 100000 31 1 100 20; ./main 4 b w8a 1 1 100000 13 1 100 20
+>> ./main 4 b a7a 1 1 100000 10 1 100 20; ./main 4 b a8a 1 1 100000 19 1 100 20; ./main 4 b a9a 1 1 100000 41 1 100 20; ./main 4 b w6a 1 1 100000 2 1 100 20; ./main 4 b w7a 1 1 100000 3 1 100 20; ./main 4 b ijcnn1 1 1 100000 31 1 100 20; ./main 4 b w8a 1 1 100000 13 1 100 20
 copy the output x from the folder "../IPALM/results/" to current folder:
 L_Katyusha_x_SVM_outer_a7atau_126;
 L_Katyusha_x_SVM_outer_a8atau_150;
