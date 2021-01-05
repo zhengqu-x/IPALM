@@ -22,7 +22,7 @@ Problem types:
 2. Least absolute deviation: f(x)= 0, g(x)= lambda1*||x||_1, h(x)= lambda3*||x||_1
 3. Fused lasso: f(x)= 0.5*||Ax- b||_2^2, g(x)= lambda1*||x||_1, h(x)= lambda3*||x||_1
 4. L_1 norm support vector machine: f(x)= 0, g(x,w)= lambda1*||x||_1, h(x)= max(0,1- x)
-5. Quadratic constrained quadrtic programming: f(x)= 0.5*x^TQ_0x+ b_0x, g(x)= I_{-b<= x<= b}, h(x)= I_{x<= 0), p(x)= (0.5*x^TQ_ix+ b_ix- 1)_{i=1,...,m}
+5. Quadratically constrained quadratic program: f(x)= 0.5*x^TQ_0x+ b_0x, g(x)= I_{-b<= x<= b}, h(x)= I_{x<= 0), p(x)= (0.5*x^TQ_ix+ b_ix- 1)_{i=1,...,m}
 
 
 
@@ -33,17 +33,18 @@ More detailed description about the problem types and algorithms can be found in
 ==================================================
 
 
-- The folder IPALM/ contains the C++ code implementing the following four algorithms:
+- The folder IPALM/ contains the C++ code implementing the following five algorithms:
 
 a. IPALM_APPROX
 b. IPALM_Katyusha
 c. SMART_CD
 d. ASGARD_DL
+e. LADMM
 
 Please open IPALM/readme.txt for more explanation about the structure of the code.
 
 
-- The folder datas/ contains 18 datasets news20scale2, rcv1, rcv2, rcv1mc, news20binary, news20binary_bp, ijcnn1, w4a, w6a, w7a, w8a, a7a, a8a, a9a, real-sim, covtype, downloaded or modified from https://www.csie.ntu.edu.tw/~cjlin/libsvm/; qcqp1, qcqp2, generated randomly,  that are used in our experiments. Since real-sim is too large to upload, readers need to download it by themselves and save it as matrix_realsim. Datasets news20binary, news20binary_bp and covtype are zip files. So readers need unzip them before running the following commands.
+- The folder datas/ contains 20 datasets news20scale2, rcv1, rcv2, rcv1mc, news20binary, news20binary_bp, ijcnn1, w4a, w6a, w7a, w8a, a7a, a8a, a9a, real-sim, covtype, downloaded or modified from https://www.csie.ntu.edu.tw/~cjlin/libsvm/; qcqp1, qcqp2, qcqp3, qcqp4, generated randomly, that are used in our experiments. Since real-sim is too large to upload, readers need to download it by themselves and save it as matrix_realsim. Datasets news20binary, news20binary_bp and covtype are zip files. So readers need unzip them before running the following commands. Since qcqp3 and qcqp4 are too large to upload, readers can generate the datasets randomly by qcqp_generate.m. For detalied instruction, please refer to the readme.txt in folder CVX/.
 
 
 - The folder MATLAB_code/ contains the Matlab code used to generate plots.
@@ -51,6 +52,10 @@ Please open IPALM/readme.txt for more explanation about the structure of the cod
 
 
 - The folder CVX/ contains the code of directly calling the cvx package to solve the problems. Please open CVX/readme.txt for instruction.
+
+
+
+- The folder libsvm/ contains the code of directly calling the LIBSVM package to solve the problems. Please open libsvm/readme.txt for instruction.
 
 
 ==================================================
