@@ -46,6 +46,7 @@
 	std::vector<double> x0;
         //for (int j = 0; j < n; j++)  {readx0_ >>x0[j]; }
         std::vector<double> y0;
+	std::vector<double> lambda0;
         double beta_0= 1;
         double epsilon_0= 0;
         double eta;
