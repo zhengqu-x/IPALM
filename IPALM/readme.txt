@@ -12,9 +12,22 @@ This class implements the accelerated coordinate descent method for solving comp
 Primal_Dual_LOOPLESS_Katyusha0.h
 =========
 
+This class implements the method loopless Katyusha with arbitrary sampling for structured objective function, in the paper <<L-SVRG and L-Katyusha with arbitrary sampling, Qian, Qu and Richtarik, arXiv:1906.01481.>>
+
+
+
+=========
+L_Katyusha.h
+=========
+
 This class implements the method loopless Katyusha with arbitrary sampling, in the paper <<L-SVRG and L-Katyusha with arbitrary sampling, Qian, Qu and Richtarik, arXiv:1906.01481.>>
 
 
+=========
+LADMM.h
+=========
+
+This class implements the method linearized ADMM, in the paper <<An Accelerated Linearized Alternating Direction Method of Multipliers, Yuyuan Ouyang, Yunmei Chen, Guanghui Lan, Eduardo Pasiliao Jr, SIAM Journal on Imaging Sciences, 2015.>>
 
 
 =========
@@ -37,6 +50,12 @@ ALM_APPROX.h
 This class implements the method IPALM_APPROX, in our paper.
 
 
+=========
+ALM_L_Katyusha.h
+=========
+
+
+This class implements the method IPALM_Katyusha for general composite problem, in our paper.
 
 
 =========
@@ -44,7 +63,7 @@ ALM_Katyusha.h
 =========
 
 
-This class implements the method IPALM_Katyusha, in our paper.
+This class implements the method IPALM_Katyusha for problem composed with linear operator, in our paper.
 
 
 
@@ -118,6 +137,14 @@ Basis_pursuit_d.h
 This class inherits the class ALM_I_APG. It solves basis pursuit problem by the method ASGARD_DL.
 
 
+=========
+Basis_pursuit_e.h
+=========
+
+This class inherits the class LADMM. It solves basis pursuit problem by the method LADMM.
+
+
+
 
 =========
 Fused_lasso_a.h
@@ -148,6 +175,11 @@ Fused_lasso_d.h
 This class inherits the class ALM_APG. It solves fused lasso problem by the method ASGARD_DL.
 
 
+=========
+Fused_lasso_e.h
+=========
+
+This class inherits the class LADMM. It solves fused lasso problem by the method LADMM.
 
 
 
@@ -174,6 +206,11 @@ L_1_Lasso_d.h
 This class inherits the class ALM_APG. It solves Least absolute deviation problem by the method ASGARD_DL.
 
 
+=========
+L_1_Lasso_e.h
+=========
+
+This class inherits the class LADMM. It solves Least absolute deviation problem by the method LADMM.
 
 
 =========
@@ -204,5 +241,18 @@ SMSVM_d.h
 
 This class inherits the class ALM_APG. It solves soft margin support vector machine problem by the method ASGARD_DL.
 
+
+=========
+SMSVM_e.h
+=========
+
+This class inherits the class LADMM. It solves soft margin support vector machine problem by the method LADMM.
+
+
+=========
+QCQP_b.h
+=========
+
+This class inherits the class ALM_L_Katyusha. It solves quadratically constrained quadratic program by the method IPALM_Katyusha.
 
 
