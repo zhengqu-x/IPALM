@@ -17,6 +17,8 @@ L_Katyusha_x_SVM_outer_w7atau_157;
 L_Katyusha_x_SVM_outer_w8atau_223.
 
 Second, 
+matlab
+addpath WHERE_YOUR_LIBSVM_PACKAGE_IS
 Run svm_compare.m
 For different datasets, just change the dataset name to define [b, A], [b2, A2] in the 1st and 2nd line, and x in the 18th line.
 
