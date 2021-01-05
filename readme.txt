@@ -195,7 +195,7 @@ To reproduce Figure 2(a) and 3(a) in our paper, do:
 >> cd PUT_PATH_TO_ROOT_WHERE_THIS_README_FILE_IS
 >> cd IPALM
 >> g++ -o main main.cpp -lgsl -lgslcblas
->> ./main 1 a news20scale2 0.01 1 100000 1000 0.01 1 50 ; ./main 1 c news20scale2 1 1 100000 1800 1 50 ; ./main 1 d news20scale2 1 1 100000 2400 1 ; ./main 1 e news20scale2 1 1 1000000 1800 0.1 100
+>> ./main 1 a news20scale2 0.01 1 100000 1000 0.01 1 50 ; ./main 1 c news20scale2 1 1 100000 1800 1 50 ; ./main 1 d news20scale2 1 1 100000 2400 1 ; ./main 1 e news20scale2 0.01 1 1000000 1800 0.1 100
 
 
 This should take roughly 1000+1800+2400+1800=7000 seconds. The results are saved in the folder results/. 
