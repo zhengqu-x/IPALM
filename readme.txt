@@ -9,8 +9,8 @@ This small package contains the code which was used to implement algorithms and 
 
 
 The optimization model which can be solved with this package is:
-minimize {f(x)+ g(x)+ h(Mx)}
-where f(x) is convex and differentiable on an open set containing dom(g), g(x) is proper, convex and closed, h(x) is proper, convex and closed or an indicator function of a convex and closed set, and M is a linear operator (matrix).
+minimize {f(x)+ g(x)+ h(p(x))}
+where f(x) is convex and differentiable on an open set containing dom(g), g(x) is proper, convex and closed, h(x) is proper, convex and closed or an indicator function of a convex and closed set, and p(x) is a linear operator (matrix) or quadratic operator.
 
 
 
