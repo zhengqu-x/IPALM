@@ -193,7 +193,45 @@ If you use this code in your research, please cite:
 
 ## License
 
-[Add appropriate license information]
+This software is licensed for **academic research use only**. See below for details:
+
+```
+Academic Research License
+
+Copyright (c) 2021 F. Li and Z. Qu
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to use
+the Software solely for academic research, educational, and non-commercial
+purposes, subject to the following conditions:
+
+1. The above copyright notice and this permission notice shall be included in 
+   all copies or substantial portions of the Software.
+
+2. The Software may only be used for academic research, educational purposes,
+   and other non-commercial activities. Commercial use, including but not 
+   limited to integration into commercial products or services, is strictly
+   prohibited without explicit written permission from the authors.
+
+3. Any publications, presentations, or other academic works that result from
+   the use of this Software must cite the original paper:
+   Li, F., Qu, Z. An inexact proximal augmented Lagrangian framework with 
+   arbitrary linearly convergent inner solver for composite convex optimization.
+   Math. Prog. Comp. 13, 583–644 (2021).
+
+4. Redistributions of the Software must retain the above copyright notice,
+   this list of conditions, and the following disclaimer.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+For commercial use or licensing inquiries, please contact the authors.
+```
 
 ## Contact
 
