@@ -47,6 +47,9 @@ where:
 - **`CVX/`** - CVX package implementations for comparison
 - **`libsvm/`** - LIBSVM package implementations for comparison
 
+### 📋 Documentation
+- **`EXPERIMENTS.md`** - Detailed instructions for reproducing all paper results and figures
+
 ## Quick Start
 
 ### Prerequisites
@@ -110,6 +113,8 @@ The repository includes detailed instructions for reproducing all figures and ta
 
 1. Running the C++ executable with specific parameters
 2. Processing results with MATLAB visualization scripts
+
+📋 **For complete experimental details and step-by-step reproduction instructions, see [EXPERIMENTS.md](EXPERIMENTS.md)**
 
 ### Example: Reproducing Figure 1(a)
 
